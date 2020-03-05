@@ -1,28 +1,25 @@
-﻿using SynergieCardStore.Models;
+﻿using SynergieCardStore.Migrations;
+using SynergieCardStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Web;
 
 namespace SynergieCardStore.EF
 {
-    public class DataInitializer : DropCreateDatabaseAlways<SynergieEntities>
+    public class DataInitializer : MigrateDatabaseToLatestVersion<SynergieEntities, Configuration>
     {
-        protected override void Seed(SynergieEntities context)
-        {
-            SeedSynergieData(context);
-            base.Seed(context);
-        }
 
-        private void SeedSynergieData(SynergieEntities context)
+        public static void SeedSynergieData(SynergieEntities context)
         {
             var categories = new List<Category>
             {
                 new Category() { CategoryId=1, CategoryName = "Książki i karty", CategoryDescription = "W kategorii znajdują się wszystkie książki i karty dotyczące tarota" },
                 new Category() { CategoryId=2, CategoryName = "E-booki", CategoryDescription = "Kategoria prezentuje nasze produkty w postaci E-booków" }
             };
-            categories.ForEach(c => context.Categories.Add(c));
+            categories.ForEach(c => context.Categories.AddOrUpdate(c));
             context.SaveChanges();
 
             var products = new List<Product>
@@ -33,7 +30,7 @@ namespace SynergieCardStore.EF
                 new Product {ProductTitle="Tarot Thota", CategoryId=1, ProductAuthor="ALEISTER CROWLEY", ProductDescription="Lady Frieda Harris stworzyła serię 78 obrazów według rysunków i wskazówek znanego okulisty Aleistera Crowley'a (1875-1947). Temu wielkiemu dziełu, które planowała stworzyć przez kilka miesięcy, ostatecznie poświęciła pięć lat swojego życia.★ Najsłynniejszy, bardzo piękny i tajemny Tarot stworzony przez Aleistera Crowley'a, głęboko osadzony w tradycji thelemicznej.★ Jest to jeden z najpiękniejszych, najgłębszych, najbardziej tajemniczych i mistycznych talii kart Tarota jakie powstały w przeciągu kilkuset lat od powstania tych magicznych kart.★ Jest to wręcz niezbędna talia do pracy dla każdego, kto interesuje się magią, twórczością Aleistera Crowleya, okultyzmem i rozwojem duchowym.★ Do kart została napisana przez Crowleya książka - Book of Thoth, Księga Thota - będąca jednym z najlepszych podręczników do Tarota.", ProductShortDescription="Tarot Thota w swych obrazach przedstawia szerokie spektrum symboli. Nakreśla związki, jakie zachodzą pomiędzy astrologią, numerologią i symboliką różnych kierunków rozwoju duchowego. Właśnie dlatego Tarot Thota stanowi źródło głębokieo poznania.", AddedDate=DateTime.Now, ProductPrice=69,ISBN="978-80-7370-179-6", PublishingHouse="Synergie", CardDimensions="11x7cm", Bestseller=false, Preview=false, Old=false,Hidden=false,ImageFileName="product_2", ImagesName="tarot-thota"},
                 new Product {ProductTitle="Cud jednorożców", CategoryId=1, ProductAuthor="COOPER DIANA", ProductDescription="Tak jak wydana w latach dziewięćdziesiątych XX w. książka A Little Light ON Angels pomogła czytelnikom nawiązać łączność z ich Aniołami Stróżami, tak Cud Jednorożców pomoże Ci odnaleźć swojego własnego Jednorożca dzięki medytacjom, rytuałom i ceremoniom.Te magiczne, świetliste stworzenia, które przez wiele lat stuleci były nieobecne na Ziemi, powracają teraz, aby poprowadzić ludzkość ściezką duchowego rozwoju. Praca ze swoim Jednorożcem pozwoli Ci osiągnąć wyższy poziom energetyczny i będzie pomagać w wędrówce ku oświeceniu. Książka zawiera wiele prawdziwych historii i anegdot opowiedzianych Autorce przez ludzi, którzy na własne oczy widzieli Jednorożce i doświadczyli spotkania z nimi. Ta książka zainspiruje Cię i wzmocni w duchowej wędrówce.", ProductShortDescription="Dowiedz się, jak interpretować mity i legendy - krążące o Jednorożcach - z wyższej, duchowej perspektywy, czytając fascynujący przewodnik o tych niezwykłych, energetycznych stworzeniach.", AddedDate=DateTime.Now, ProductPrice=30,ISBN="978-80-7370-151-2", PublishingHouse="Synergie", CardDimensions="20,5x13,5cm", Bestseller=false, Preview=false, Old=false,Hidden=false,ImageFileName="product_3", ImagesName="cud-jednorozcow"}
             };
-            products.ForEach(p => context.Products.Add(p));
+            products.ForEach(p => context.Products.AddOrUpdate(p));
 
             context.SaveChanges();
         }
