@@ -1,7 +1,185 @@
-﻿
+﻿@using BooksDAL.Models
+@using SynergieBooksShop.Infrastructure
+@model IEnumerable<BooksDAL.Models.Product>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Synergie Polska";
 }
 
-<h2>Index</h2>
+<!-- Home -->
+
+<div class="home">
+
+    <!-- Home Slider -->
+    <div class="home_slider_container">
+        <div class="owl-carousel owl-theme home_slider">
+
+            <!-- Slide -->
+            <div class="owl-item">
+                <div class="background_image" style="background-image:url(@Url.Content("~/Content/images/home_slider_1.jpg)")"></div>
+                <div class="home_content_container">
+                    <div class="home_content">
+                        <div class="home_title">Karty i książki</div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Home Slider Navigation -->
+        <div class="home_slider_nav home_slider_prev trans_200"><div class=" d-flex flex-column align-items-center justify-content-center"><img src="@Url.Content("~/Content/images/prev.png")" alt=""></div></div>
+        <div class="home_slider_nav home_slider_next trans_200"><div class=" d-flex flex-column align-items-center justify-content-center"><img src="@Url.Content("~/Content/images/next.png")" alt=""></div></div>
+
+    </div>
+</div>
+
+
+<!-- Home Text Bar -->
+<div class="text_bar">
+    <div class="text_bar_head">
+        Witamy na stronie Synergie Polska
+    </div>
+    <div class="text_bar_body">
+        <p style="font-size: large;">Jesteśmy wydawnictwem odpowiedzialnym za wydawanie oraz sprzedaż produktów z kategorii ezoteryka i duchowość, które prezentujemy na niniejszej stronie.</p>
+
+        <p style="font-size: large;"><b>Zapraszamy hurtownie oraz sklepy do wpółpracy!</b></p>
+    </div>
+</div>
+
+
+<!-- Boxes -->
+
+<div class="boxes">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+
+                <!-- Box -->
+                <div class="col-lg-4 box_col">
+                    <div class="box">
+                        <div class="box_image"><img src="@Url.Content("~/Content/images/box_1.jpg")" alt=""></div>
+                        <div class="box_title trans_200"><a href="#">tarot</a></div>
+                    </div>
+                </div>
+
+                <!-- Box -->
+                <div class="col-lg-4 box_col">
+                    <div class="box">
+                        <div class="box_image"><img src="@Url.Content("~/Content/images/box_2.jpg")" alt=""></div>
+                        <div class="box_title trans_200"><a href="#">wskazówki</a></div>
+                    </div>
+                </div>
+
+                <!-- Box -->
+                <div class="col-lg-4 box_col">
+                    <div class="box">
+                        <div class="box_image"><img src="@Url.Content("~/Content/images/box_3.jpg")" alt=""></div>
+                        <div class="box_title trans_200"><a href="#">opowiadania</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Categories
+
+<div class="categories">
+  <div class="section_container">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="categories_list_container">
+            <ul class="categories_list d-flex flex-row align-items-center justify-content-start">
+              <li><a href="categories.html">wszystko</a></li>
+              <li><a href="categories.html">polecane</a></li>
+              <li><a href="categories.html">najnowsze</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Products -->
+
+<div class="products" id="products">
+
+    <!-- Sorting & Filtering -->
+    <div class="products_bar" style="margin-bottom:50px;">
+        <div class="section_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="products_bar_content d-flex flex-column flex-xxl-row align-items-start align-items-xxl-center justify-content-start">
+                            <div class="product_categories">
+                                <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                    <li class="item_filter_btn" data-filter="*">Wszystko</li>
+                                    <li class="item_filter_btn" data-filter=".hot">Popularne</li>
+                                    <li class="item_filter_btn" data-filter=".new">Nowe</li>
+                                    <!--<li class="item_filter_btn" data-filter=".sale">Wyprzedaż</li>-->
+                                </ul>
+                            </div>
+                            <div class="products_bar_side ml-xxl-auto d-flex flex-row align-items-center justify-content-start">
+                                <div class="products_dropdown product_dropdown_sorting">
+                                    <div class="isotope_sorting_text"><span>Sortowanie</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                    <ul>
+                                        <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "original-order" }'>Domyślne</li>
+                                        <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "price" }'>Cena</li>
+                                        <li class="item_sorting_btn" data-isotope-option='{ "sortBy": "name" }'>Nazwa</li>
+                                    </ul>
+                                </div>
+                                <div class="product_view d-flex flex-row align-items-center justify-content-start">
+                                    <div class="view_item active"><img src="@Url.Content("~/Content/images/view_1.png")" alt=""></div>
+                                    <div class="view_item"><img src="@Url.Content("~/Content/images/view_2.png")" alt=""></div>
+                                    <div class="view_item"><img src="@Url.Content("~/Content/images/view_3.png")" alt=""></div>
+                                </div>
+                                <div class="products_dropdown text-right product_dropdown_filter">
+                                    <div class="isotope_filter_text"><span>Filtruj</span><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                                    <ul>
+                                        <li class="item_filter_btn" data-filter="*">Wszystkie</li>
+                                        <li class="item_filter_btn" data-filter=".hot">Popularne</li>
+                                        <li class="item_filter_btn" data-filter=".new">Nowe</li>
+                                        <!--<li class="item_filter_btn" data-filter=".sale">Wyprzedaż</li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="products_container grid">
+                        @foreach (var item in Model)
+                        {
+                            <!-- Product-->
+                            <div class="product grid-item @((item.Bestseller == true) ? "hot" : "new")">
+                                <div class="product_inner">
+                                    <div class="product_image">
+                                        <img src="@Url.ProductsMiniaturesPath(item.ImageFileName+".jpg")" alt="">
+                                        <div class="product_tag">@((item.Bestseller == true) ? "hot" : "new")</div>
+                                    </div>
+                                    <div class="product_content text-center">
+                                        <div class="product_title"><a href="@Url.Action("Details", "Products", new { id=item.ProductId})">@item.ProductTitle</a></div>
+                                        <div class="product_price">@item.ProductPrice zł</div>
+                                        <div class="product_button ml-auto mr-auto trans_200"><a href="@Url.Action("Details", "Products", new { id=item.ProductId})">Zobacz produkt</a></div>
+                                        <div class="product_button ml-auto mr-auto trans_200"><a href="@Url.Action("AddToCart", "Cart", new { id=item.ProductId})">Zobacz produkt</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 

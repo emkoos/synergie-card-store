@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Nowosci</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Najnowsze produkty w sprzedaży">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="images/favicon.ico?v=2" type="image/x-icon" />
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.3/bootstrap.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/about.css">
+<link rel="stylesheet" type="text/css" href="styles/about_responsive.css">
+</head>
+<body>
+
+	<div class="super_container">
+
+		<!-- Header -->
+	  
+		<header class="header">
+		  <div class="header_content d-flex flex-row align-items-center justify-content-start">
+			  
+			  <!-- Hamburger -->
+			  <div class="hamburger menu_mm"><i class="fa fa-bars menu_mm" aria-hidden="true"></i></div>
+	  
+			  <!-- Logo -->
+			  <div class="header_logo">
+				<a href="index.html"><img src="images/logo_mobile.jpg" alt="Synergie logo"></a>
+			  </div>
+	  
+			  <!-- Navigation -->
+	  <nav class="header_nav">
+		<ul class="d-flex flex-row align-items-center justify-content-start">
+		  <li><a href="index.html">strona główna</a></li>
+		  <li><a href="nowosci.html">nowości</a></li>
+		  <li><a href="zapowiedzi.html">zapowiedzi</a></li>
+		  <li><a href="archiwum.html">archiwum</a></li>
+		  <li><a href="https://synergie-pl.blogspot.com" target="_blank">blog</a></li>
+		  <li><a href="o-nas.html">o nas</a></li>
+		  <li><a href="partnerzy.html">współpraca</a></li>
+		  <li><a href="kontakt.php">kontakt</a></li>
+		</ul>
+	  </nav>
+	  
+			  <!-- Header Extra -->
+			  <div class="header_extra ml-auto d-flex flex-row align-items-center justify-content-start">
+	  
+				  <!-- Language -->
+				  <div class="info_languages has_children">
+					  <div class="language_flag"><img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+					  <div class="dropdown_text">polski</div>
+					  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+					  <!-- Language Dropdown Menu -->
+					   <ul>
+						   <li><a href="#">
+							   <div class="language_flag"><img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+							  <div class="dropdown_text">english</div>
+						   </a></li>
+					   </ul>
+	  
+				  </div>
+	  
+				  <!-- Currency 
+				  <div class="info_currencies has_children">
+					  <div class="dropdown_text">PLN</div>
+					  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+					  Currencies Dropdown Menu 
+					   <ul>
+						   <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+					   </ul>
+	  
+				  </div>-->
+	  
+				  <!-- Cart 
+				  <div class="cart d-flex flex-row align-items-center justify-content-start">
+					  <div class="cart_icon"><a href="cart.html">
+						  <img src="images/bag.png" alt="">
+						  <div class="cart_num">2</div>
+					  </a></div>
+				  </div>-->
+	  
+			  </div>
+	  
+		  </div>
+	  </header>
+	  
+	  <!-- Menu -->
+	  
+	  <div class="menu d-flex flex-column align-items-start justify-content-start menu_mm trans_400">
+		  <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		  <div class="menu_top d-flex flex-row align-items-center justify-content-start">
+	  
+			  <!-- Language -->
+			  <div class="info_languages has_children">
+				  <div class="language_flag"><img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+				  <div class="dropdown_text">polski</div>
+				  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+				  <!-- Language Dropdown Menu -->
+				   <ul>
+					   <li><a href="#">
+						   <div class="language_flag"><img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+						  <div class="dropdown_text">english</div>
+					   </a></li>
+				   </ul>
+	  
+			  </div>
+	  
+			  <!-- Currency 
+			  <div class="info_currencies has_children">
+				  <div class="dropdown_text">pln</div>
+				  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+				   Currencies Dropdown Menu 
+				   <ul>
+					   <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+				   </ul>
+	  
+			  </div>-->
+	  
+		  </div>
+		  <div class="menu_search">
+			  <form method="get" action="search.php" class="header_search_form menu_mm">
+				  <input name="zoom_query" type="search" class="search_input menu_mm" placeholder="Wyszukaj" required="required">
+				  <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+					  <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+				  </button>
+			  </form>
+		  </div>
+		  <nav class="menu_nav">
+		<ul class="menu_mm">
+						  <li class="menu_mm"><a href="index.html">strona główna</a></li>
+						  <li class="menu_mm"><a href="nowosci.html">nowości</a></li>
+						  <li class="menu_mm"><a href="zapowiedzi.html">zapowiedzi</a></li>
+						  <li class="menu_mm"><a href="archiwum.html">archiwum</a></li>
+						  <li class="menu_mm"><a href="https://synergie-pl.blogspot.com" target="_blank">blog</a></li>
+						  <li class="menu_mm"><a href="o-nas.html">o nas</a></li>
+						  <li class="menu_mm"><a href="partnerzy.html">współpraca</a></li>
+						  <li class="menu_mm"><a href="kontakt.php">kontakt</a></li>
+				  </ul>
+		  </nav>
+		  <div class="menu_extra">
+			  <div class="menu_social">
+				  <ul>
+					  <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					  <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					  <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+					  <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				  </ul>
+			  </div>
+		  </div>
+	  </div>
+	  
+	  <!-- Sidebar -->
+	  
+	  <div class="sidebar">
+	  
+		  <!-- Info -->
+		  <div class="info">
+			  <div class="info_content d-flex flex-row align-items-center justify-content-start">
+	  
+				  <!-- Language -->
+				  <div class="info_languages has_children">
+					  <div class="language_flag"><img src="images/flag_1.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+					  <div class="dropdown_text">polski</div>
+					  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+					  <!-- Language Dropdown Menu -->
+					   <ul>
+						   <li><a href="#">
+							   <div class="language_flag"><img src="images/flag_2.svg" alt="https://www.flaticon.com/authors/freepik"></div>
+							  <div class="dropdown_text">english</div>
+						   </a></li>
+					   </ul>
+	  
+				  </div>
+	  
+				  <!-- Currency 
+				  <div class="info_currencies has_children">
+					  <div class="dropdown_text">pln</div>
+					  <div class="dropdown_arrow"><i class="fa fa-angle-down" aria-hidden="true"></i></div>
+	  
+					   Currencies Dropdown Menu
+					   <ul>
+						   <li><a href="#"><div class="dropdown_text">EUR</div></a></li>
+					   </ul>
+	  
+				  </div>-->
+	  
+			  </div>
+		  </div>
+	  
+		  <!-- Logo -->
+		  <div class="sidebar_logo">
+			<a href="index.html"><img src="images/logo.jpg" alt="Synergie logo"></a>
+		  </div>
+	  
+		   <!-- Sidebar Navigation -->
+		   <nav class="sidebar_nav">
+			  <ul>
+				<li><a href="index.html">strona główna<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="nowosci.html">nowości<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="zapowiedzi.html">zapowiedzi<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="archiwum.html">archiwum<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="https://synergie-pl.blogspot.com" target="_blank">blog<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="o-nas.html">o nas<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="partnerzy.html">współpraca<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+				<li><a href="kontakt.php">kontakt<i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+			  </ul>
+			</nav>
+	  
+		  <!-- Search -->
+		  <div class="search">
+			<form method="get" action="search.php" class="search_form" id="sidebar_search_form">
+			  <input type="text" name="zoom_query" class="search_input" placeholder="Wyszukaj" required="required">
+			  <button class="search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+		  </div>
+	  
+		  <!-- Cart
+		  <div class="cart d-flex flex-row align-items-center justify-content-start">
+			<div class="cart_icon"><a href="cart.html">
+			  <img src="images/bag.png" alt="">
+			  <div class="cart_num">2</div>
+			</a></div>
+			<div class="cart_text">bag</div>
+			<div class="cart_price">$39.99 (1)</div>
+		  </div>
+		  -->
+		</div>
+
+	<!-- Home -->
+
+	<div class="home">
+
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/product_background.jpg" data-speed="0.8"></div>
+            <div class="home_container">
+                <div class="home_content">
+                    <div class="home_title">Nowości</div>
+                    <div class="breadcrumbs">
+                        <ul class="d-flex flex-row align-items-center justify-content-start">
+                            <li><a href="index.html">Główna</a></li>
+                            <li><a href="#">Nowości</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+	</div>
+
+
+	<!-- Categories 
+
+	<div class="categories">
+		<div class="section_container">
+			<div class="container">
+				<div class="row">
+					<div class="col text-center">
+						<div class="categories_list_container">
+							<ul class="categories_list d-flex flex-row align-items-center justify-content-start">
+								<li><a href="categories.html">wszystko</a></li>
+								<li><a href="categories.html">polecane</a></li>
+								<li><a href="categories.html">najnowsze</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+
+	<!-- Products -->
+
+	<div class="products">
+
+		
+		<div class="section_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="products_container grid">	
+
+							<!-- Product -->
+							<div class="product grid-item new">
+								<div class="product_inner">
+									<div class="product_image">
+										<img src="images/products/product_26.jpg" alt="">
+										<div class="product_tag">new</div>
+									</div>
+									<div class="product_content text-center">
+										<div class="product_title"><a href="products/tarot-zwierciadlo-duszy-zestaw.html">Tarot Zwierciadło Duszy</a></div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="products/tarot-zwierciadlo-duszy-zestaw.html">Zobacz produkt</a></div>
+									</div>
+								</div>	
+							</div>
+
+							<!-- Product -->
+							<div class="product grid-item new">
+								<div class="product_inner">
+									<div class="product_image">
+										<img src="images/products/product_18.jpg" alt="">
+										<div class="product_tag">new</div>
+									</div>
+									<div class="product_content text-center">
+										<div class="product_title"><a href="products/tarot-chrysalis.html">Tarot Chrysalis</a></div>
+										<div class="product_button ml-auto mr-auto trans_200"><a href="products/tarot-chrysalis.html">Zobacz produkt</a></div>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Newsletter -->
+
+	<div class="newsletter">
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg" data-speed="0.8"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="newsletter_content text-center">
+						<div class="newsletter_title_container">
+							<div class="newsletter_title">Zasubskrybuj Newsletter</div>
+							<div class="newsletter_subtitle">My nie spamujemy!</div>
+						</div>
+						<div class="newsletter_form_container">
+							<form action="#" id="newsletter_form" class="newsletter_form">
+								<input type="email" class="newsletter_input" placeholder="twój email" required="required">
+								<button class="newsletter_button">zaakceptuj</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="footer_content">
+			<div class="section_container">
+				<div class="container">
+					<div class="row">
+
+						<!-- About -->
+						<div class="col-xxl-3 col-md-6 footer_col">
+							<div class="footer_about">
+								<!-- Logo -->
+								<div class="footer_logo" >
+									<img src="images/synergie_logo.jpg" alt="">
+								</div>
+								
+							</div>
+						</div>
+
+						<!-- Questions -->
+						<div class="col-xxl-3 col-md-6 footer_col">
+								<div class="footer_questions">
+									<div class="footer_title">informacje</div>
+									<div class="footer_list">
+										<ul>
+											<li><a href="o-nas.html">O Nas</a></li>
+											<li><a href="nowosci.html">Nowości</a></li>
+											<li><a href="zapowiedzi.html">Zapowiedzi</a></li>
+											<li><a href="archiwum.html">Archiwum</a></li>
+											<li><a href="dostawy.html">Dostawy</a></li>
+											<li><a href="https://synergie-pl.blogspot.com" target="_blank">Blog</a></li>
+											<li><a href="partnerzy.html">Partnerzy</a></li>
+											<li><a href="kontakt.php">Kontakt</a></li>
+											<li><a href="#">Inne</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						<!-- Blog -->
+						<div class="col-xxl-3 col-md-6 footer_col">
+							<div class="footer_blog">
+								<div class="footer_title">blog</div>
+								<div class="footer_blog_container">
+
+									<!-- Blog Item -->
+									<div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
+										<div class="footer_blog_image"><a href="https://synergie-pl.blogspot.com" target="_blank"><img src="images/footer_blog_1.jpg" alt=""></a></div>
+										<div class="footer_blog_content">
+											<div class="footer_blog_title"><a href="https://synergie-pl.blogspot.com" target="_blank">karty tarota z rana</a></div>
+											<div class="footer_blog_date">listopad 05, 2019</div>
+											<div class="footer_blog_link"><a href="https://synergie-pl.blogspot.com" target="_blank">czytaj wiecej</a></div>
+										</div>
+									</div>
+
+									<!-- Blog Item -->
+									<div class="footer_blog_item d-flex flex-row align-items-start justify-content-start">
+										<div class="footer_blog_image"><a href="https://synergie-pl.blogspot.com" target="_blank"><img src="images/footer_blog_2.jpg" alt=""></a></div>
+										<div class="footer_blog_content">
+											<div class="footer_blog_title"><a href="https://synergie-pl.blogspot.com" target="_blank">magiczne święta</a></div>
+											<div class="footer_blog_date">grudzien 16, 2019</div>
+											<div class="footer_blog_link"><a href="https://synergie-pl.blogspot.com" target="_blank">czytaj wiecej</a></div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+						<!-- Contact -->
+						<div class="col-xxl-3 col-md-6 footer_col">
+							<div class="footer_contact">
+								<div class="footer_title">kontakt</div>
+								<div class="footer_contact_list">
+									<ul>
+										<li class="d-flex flex-row align-items-start justify-content-start"><span>F.</span><div>Synergie Polska Sp. z o.o.</div></li>
+										<li class="d-flex flex-row align-items-start justify-content-start"><span>A.</span><div>ul. Rakowska 29, 27-570 Iwaniska</div></li>
+										<li class="d-flex flex-row align-items-start justify-content-start"><span>T.</span><div>+48 530 249 222</div></li>
+                   					    <li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>synergiepolska@gmail.com</div></li>
+                    					<li class="d-flex flex-row align-items-start justify-content-start"><span>E.</span><div>glibowski@post.cz</div></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Social -->
+		<div class="footer_social">
+				<div class="section_container">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="footer_social_container d-flex flex-row align-items-center justify-content-between">
+									<!-- Instagram -->
+									<a href="https://www.instagram.com/eiva.pl/" target="_blank">
+										<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
+											<div class="footer_social_icon"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+											<div class="footer_social_title">instagram</div>
+										</div>
+									</a>
+									<!-- Google + -->
+									<a href="#">
+										<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
+											<div class="footer_social_icon"><i class="fa fa-google-plus" aria-hidden="true"></i></div>
+											<div class="footer_social_title">google +</div>
+										</div>
+									</a>
+									
+									<!-- Facebook -->
+									<a href="https://www.facebook.com/synergiewydawnictwo/" target="_blank">
+										<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
+											<div class="footer_social_icon"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+											<div class="footer_social_title">facebook</div>
+										</div>
+									</a>
+									<!-- YouTube -->
+									<a href="https://www.youtube.com/channel/UCEpGP1OR-db1nrKrFymK7Rw" target="_blank">
+										<div class="footer_social_item d-flex flex-row align-items-center justify-content-start">
+											<div class="footer_social_icon"><i class="fa fa-youtube" aria-hidden="true"></i></div>
+											<div class="footer_social_title">youtube</div>
+										</div>
+									</a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Credits -->
+		<div class="credits">
+			<div class="section_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="credits_content d-flex flex-row align-items-center justify-content-end">
+								<div class="credits_text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap-4.1.3/popper.js"></script>
+<script src="styles/bootstrap-4.1.3/bootstrap.min.js"></script>
+<script src="plugins/greensock/TweenMax.min.js"></script>
+<script src="plugins/greensock/TimelineMax.min.js"></script>
+<script src="plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="plugins/greensock/animation.gsap.min.js"></script>
+<script src="plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/Isotope/isotope.pkgd.min.js"></script>
+<script src="plugins/Isotope/fitcolumns.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
