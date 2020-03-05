@@ -10,13 +10,11 @@ namespace SynergieCardStore.Controllers
 {
     public class HomeController : Controller
     {
-        private CardsEntities db = new CardsEntities();
+        private SynergieEntities db = new SynergieEntities();
 
         public ActionResult Index()
         {
-            Category category = new Category { CategoryName = "Książki i karty", CategoryDescription = "W kategorii znajdują się wszystkie książki i karty dotyczące tarota" };
-            db.Categories.Add(category);
-            db.SaveChanges();
+            var categoriesList = db.Categories.ToList();
 
             return View();
         }

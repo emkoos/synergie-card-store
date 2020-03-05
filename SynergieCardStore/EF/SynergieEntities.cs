@@ -7,7 +7,7 @@ using System.Web;
 
 namespace SynergieCardStore.EF
 {
-    public class CardsEntities : DbContext
+    public class SynergieEntities : DbContext
     {
         // Your context has been configured to use a 'CardsEntities' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -15,9 +15,14 @@ namespace SynergieCardStore.EF
         // 
         // If you wish to target a different database and/or database provider, modify the 'CardsEntities' 
         // connection string in the application configuration file.
-        public CardsEntities()
+        public SynergieEntities()
             : base("name=SynergieStoreConnection")
         {
+        }
+
+        static SynergieEntities()
+        {
+            Database.SetInitializer<SynergieEntities>(new DataInitializer());
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
