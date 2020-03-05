@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Informacje o dostawach";
+}
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/about.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/about_responsive.css")">
+}
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Info -->
+
+<div class="about">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <!-- About Posts -->
+                    <div class="about_bosts">
+
+                        <!-- About Post -->
+                        <div class="about_post">
+                            <div class="about_post_image"><img src="@Url.Content("~/Content/images/synergie_logo.jpg")" alt=""><img src="@Url.Content("~/Content/images/eiva_logo.jpg")" alt="" style="padding-left: 20px;"></div>
+                            <div class="about_post_content">
+                                <div class="about_post_title"><a href="#">SPOSOBY I KOSZTY DOSTAWY</a></div>
+                                <div class="about_post_text" style="text-align: left;">
+                                    <p>
+                                        Produkty oferowane przez Synergie Polska Sp. z o.o. dostarczane są za pomocą przesyłki kurierskiej.
+                                        Koszty dostawy produktów oferowanych w naszym sklepie zależą od gabarytów produktu i mogą różnić się od kosztów dla produktów oferowanych przez Eiva.pl
+                                    </p>
+                                    <p>Realizacja wysyłki zamówienia odbywa się za pośrednictwem firmy kurierskiej InPost lub DPD. Zamówienia przyjmowane są 7 dni w tygodniu, 24h na dobę. Natomiast wysyłka i pakowanie odbywa się w dni robocze. Zwykle czas oczekiwania na dostawę trwa wynosi 2-3 dni.</p>
+                                </div>
+                                <div class="about_post_title"><a href="#">Przesyłka kurierska</a></div>
+                                <div class="about_post_text">
+                                    <ul style="text-align: left; list-style-type: circle;">
+                                        <li>Realizowana od poniedziałku do piątku w godzinach od 9.00 do 17.00.</li>
+                                        <li>Dostawa w ciągu 1-3 dni roboczych od momentu nadania paczki.</li>
+                                        <li>Metoda jest dostępna dla wszystkich produktów.</li>
+                                        <li>Płatność za pobraniem jest możliwa dla wszystkich zamówień.</li>
+                                    </ul>
+                                </div>
+                                <div class="about_post_title"><a href="#">Odbiór osobisty</a></div>
+                                <div class="about_post_text">
+                                    <ol style="text-align: left; margin-top: 20px;">
+                                        <li><b>Paczkomaty InPost</b></li>
+                                        <ul style="text-align: left; list-style-type: circle; margin-left: 20px;">
+                                            <li>Paczkomaty są czynne 24 godziny na dobę przez 7 dni w tygodniu.</li>
+                                            <li>Dostawa do Paczkomatu w ciągu 2 roboczych od momentu nadania paczki.</li>
+                                            <li>Metoda jest dostępna dla wszystkich produktów.</li>
+                                            <li>Paczka będzie czekać na odbiór przez 48 godzin od dostarczenia.</li>
+                                        </ul>
+                                        <li><b>Punkt Wydawnictwa</b></li>
+                                        <ul style="text-align: left; margin-left: 20px;">
+                                            <li>Synergie Polska Sp. z o.o.</li>
+                                            <li>ul. Rakowska 29, 27-570 Iwaniska</li>
+                                            <li>+48 123 345 567</li>
+                                            <li>synergiepolska@gmail.com</li>
+                                        </ul>
+                                    </ol>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row load_more_row">
+                <div class="col">
+                    <div class="load_more_button trans_200 ml-auto mr-auto"><a href="@Url.Action("StaticPages", "Home", new { name = "Kontakt"})">Skontaktuj się</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

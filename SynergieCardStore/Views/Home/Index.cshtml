@@ -1,6 +1,5 @@
-﻿@using BooksDAL.Models
-@using SynergieBooksShop.Infrastructure
-@model IEnumerable<BooksDAL.Models.Product>
+﻿@using SynergieCardStore.Infrastructure
+@model SynergieCardStore.ViewModels.HomeViewModel
 @{
     ViewBag.Title = "Synergie Polska";
 }
@@ -156,7 +155,7 @@
             <div class="row">
                 <div class="col">
                     <div class="products_container grid">
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Products.ToList())
                         {
                             <!-- Product-->
                             <div class="product grid-item @((item.Bestseller == true) ? "hot" : "new")">

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "O nas";
+}
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/about.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/about_responsive.css")">
+}
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Info -->
+
+<div class="about">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <!-- About Posts -->
+                    <div class="about_bosts">
+
+                        <!-- About Post -->
+                        <div class="about_post">
+                            <div class="about_post_image"><img src="@Url.Content("~/Content/images/synergie_logo.jpg")" alt=""></div>
+                            <div class="about_post_content">
+                                <div class="about_post_title"><a href="#">Synergie Polska Sp. z o.o.</a></div>
+                                <div class="about_post_text">
+                                    <p>Firma Synergie Polska Sp. z o.o. to oficjalny polski dystrybutor produktów firmy Synergie Publishing.</p>
+                                    <p>Synergie Publishing to wydawnictwo prowadzące działalność na obszarach wielu krajów. Książki wybierane przez to przedsiębiorstwo wprowadzają czytelnika w świat magii, ezoteryki oraz filozofii Wschodu.</br></p>
+                                </div>
+                                <div class="about_address_head">Nasz Adres:</div>
+                                <div class="about_address_body">
+                                    Synergie Polska Sp. z o.o.<br>
+                                    ul. Rakowska 29 <br>
+                                    27-570 Iwaniska <br>
+                                    +48 530 249 222 <br>
+                                    synergiepolska@gmail.com
+                                </div>
+                                <div class="about_address_body" style="margin-top: 30px;">
+                                    NIP: 8631703910<br>
+                                    KRS: 0000808261 <br>
+                                    REGON: 384602046 <br>
+                                    Kapitał zakładowy: 130 000 zł <br>
+                                    <b>
+                                        Dane do przelewu mBank:<br>
+                                        42 1140 2004 0000 3302 7936 2176<br>
+                                        BIC/SWIFT: BREXPLPWMBK
+                                    </b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row load_more_row">
+                <div class="col">
+                    <div class="load_more_button trans_200 ml-auto mr-auto"><a href="@Url.Action("StaticPages", "Home", new { name = "Kontakt"})">Skontaktuj się</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

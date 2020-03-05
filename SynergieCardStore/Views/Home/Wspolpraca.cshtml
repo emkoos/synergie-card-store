@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Partnerzy";
+}
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/partners.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/partners_responsive.css")">
+}
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- About Info -->
+
+<div class="about">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <!-- About Posts -->
+                    <div class="about_bosts">
+
+                        <!-- About Post -->
+                        <div class="about_post">
+                            <div class="text_bar_head">
+                                Nasi Partnerzy:
+                            </div>
+                            <div class="about_post_image"><img src="@Url.Content("~/Content/images/eiva_logo.jpg")" alt=""></div>
+                            <div class="about_post_content">
+                                <div class="about_post_title"><a href="https://eiva.pl/" target="_blank">Eiva</a></div>
+                                <div class="about_post_text">
+                                    <p>Firma Iva jest firmą rodziną, która obecnie wkracza w nowy wiek. Szeroka gama produktów, które oferują jest stale powiększana. Jeśli nie mają tego czego potrzebujesz, dołożą starań aby to dla Ciebie zdobyć. Są mistrzami w reagowaniu na potrzeby klientów.</p>
+                                    <p><b>Firma IVA jest naszym Głównym Dystrybutorem. W sklepie pod adresem <i><a href="https://eiva.pl/" target="_blank">EIVA.PL</a></i> można zakupić cały nasz asortyment.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

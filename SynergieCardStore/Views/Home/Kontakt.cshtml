@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Kontakt";
+}
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/contact.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/contact_responsive.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/util.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/main.css")">
+}
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Info -->
+
+<div class="about">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <!-- Contact post -->
+                    <div class="about_bosts">
+
+                        <div class="contact1">
+                            <div class="container-contact1">
+                                <div class="contact1-pic js-tilt" data-tilt>
+                                    <img src="@Url.Content("~/Content/images/img-01.png")" alt="IMG">
+                                </div>
+
+                                <form class="contact1-form validate-form" action="" method="POST">
+                                    <span class="contact1-form-title">
+                                        Skontaktuj się z nami
+                                    </span>
+
+                                    <div class="wrap-input1 validate-input" data-validate="Name is required">
+                                        <input class="input1" type="text" name="name" placeholder="Imię" required>
+                                        <span class="shadow-input1"></span>
+                                    </div>
+
+                                    <div class="wrap-input1 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                                        <input class="input1" type="text" name="email" placeholder="Email" required>
+                                        <span class="shadow-input1"></span>
+                                    </div>
+
+                                    <div class="wrap-input1 validate-input" data-validate="Subject is required">
+                                        <input class="input1" type="text" name="subject" placeholder="Temat" required>
+                                        <span class="shadow-input1"></span>
+                                    </div>
+
+                                    <div class="wrap-input1 validate-input" data-validate="Message is required">
+                                        <textarea class="input1" name="message" placeholder="Wiadomość" required></textarea>
+                                        <span class="shadow-input1"></span>
+                                    </div>
+
+                                    <div class="container-contact1-form-btn">
+                                        <button class="contact1-form-btn" name="send">
+                                            <span>
+                                                Wyślij Email
+                                                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="google_map" style="margin-left:auto;margin-right:auto;"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10101.521846725012!2d21.268911!3d50.731432!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x7010c2ee78f0c993!2sSynergie%20Polska%20Sp.%20z%20o.o.!5e0!3m2!1spl!2spl!4v1574782812982!5m2!1spl!2spl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+s

@@ -1,5 +1,6 @@
 ﻿using SynergieCardStore.EF;
 using SynergieCardStore.Models;
+using SynergieCardStore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +15,20 @@ namespace SynergieCardStore.Controllers
 
         public ActionResult Index()
         {
-            var categoriesList = db.Categories.ToList();
+            var products = db.Products.ToList();
 
-            return View();
+            var vm = new HomeViewModel()
+            {
+                Products = products
+            };
+
+            return View(vm);
         }
 
-        
+        public ActionResult StaticPages(string name)
+        {
+            return View(name);
+        }
+
     }
 }
