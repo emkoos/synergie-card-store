@@ -1,0 +1,108 @@
+﻿@using SynergieCardStore.Infrastructure
+@model SynergieCardStore.Models.Product
+@{
+    ViewBag.Title = "Szczegóły produktu";
+}
+
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/product.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/product_responsive.css")">
+}
+
+
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@Model.ProductTitle</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="categories.html">@((Model.CategoryId == 1) ? "Karty" : "E-booki")</a></li>
+                    <li>@Model.ProductTitle</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Products -->
+
+<div class="product">
+
+    <!-- Sorting & Filtering -->
+    <div class="products_bar">
+        <div class="section_container">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="products_bar_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="product_categories">
+                                <ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                    <li class="active"><a href="@Url.Action("Index", "Home", "Home")#products">Wszystkie</a></li>
+                                    <li><a href="@Url.Action("News", "Product", "Nowosci")">Nowości</a></li>
+                                    <li><a href="@Url.Action("Previews", "Product", "Zapowiedzi")">Zapowiedzi</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Content -->
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="product_content_container d-flex flex-lg-row flex-column align-items-start justify-content-start">
+                        <div class="product_content order-lg-1 order-2">
+                            <div class="product_description">
+                                <div class="product_description_head">
+                                    @Model.ProductShortDescription
+                                </div>
+                                <div class="product_description_body">
+                                    @Model.ProductDescription
+                                </div>
+                            </div>
+                            <div class="product_content_inner">
+                                <div class="product_image_row d-flex flex-md-row flex-column align-items-md-end align-items-start justify-content-start">
+                                    <div class="product_image_1 product_image">
+                                        <img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_1.jpg")" alt="">
+                                    </div>
+                                    <div class="product_image_2 product_image"><img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_2.jpg")" alt=""></div>
+                                </div>
+                                <div class="product_image_row">
+                                    <div class="product_image_3 product_image"><img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_3.jpg")" alt=""></div>
+                                </div>
+                                <div class="product_image_row d-flex flex-md-row flex-column align-items-start justify-content-start">
+                                    <div class="product_image_4 product_image"><img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_4.jpg")" alt=""></div>
+                                    <div class="product_image_5 product_image"><img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_5.jpg")" alt=""></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="product_sidebar order-lg-2 order-1">
+                            <form action="#" id="product_form" class="product_form">
+                                <div class="product_name">@Model.ProductTitle</div>
+                                <div class="product_color">Autor: <span>@Model.ProductAuthor</span></div>
+                                <div class="product_color">Wydawnictwo: <span>@Model.PublishingHouse</span></div>
+                                <div class="product_color">Wymiar kart: <span>@Model.CardDimensions</span></div>
+                                <div class="product_color">ISBN: <span>@Model.ISBN</span></div>
+                                <div class="similar_products_button trans_200"><a href="@Url.Action("Index", "Home", "Home")#products">Zobacz inne produkty</a></div>
+                            </form>
+                            <div style="margin-left: auto;margin-right: auto;text-align: center;">
+                                <div class="fb-like" style="margin-top: 30px;;" data-href="https://www.facebook.com/synergiewydawnictwo/" data-width="30" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

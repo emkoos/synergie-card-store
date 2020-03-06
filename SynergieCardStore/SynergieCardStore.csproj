@@ -643,6 +643,7 @@
     <Content Include="Views\Product\Archives.cshtml" />
     <Content Include="Views\Product\News.cshtml" />
     <Content Include="Views\Product\Previews.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Mdf_Files\" />

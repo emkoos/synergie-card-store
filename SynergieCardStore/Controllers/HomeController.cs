@@ -15,7 +15,7 @@ namespace SynergieCardStore.Controllers
 
         public ActionResult Index()
         {
-            var products = db.Products.ToList();
+            var products = db.Products.Where(p => !p.Old && !p.Preview && !p.Hidden).ToList();
 
             var vm = new HomeViewModel()
             {

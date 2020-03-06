@@ -155,7 +155,7 @@
             <div class="row">
                 <div class="col">
                     <div class="products_container grid">
-                        @foreach (var item in Model.Products.ToList())
+                        @foreach (var item in Model.Products)
                         {
                             <!-- Product-->
                             <div class="product grid-item @((item.Bestseller == true) ? "hot" : "new")">
@@ -165,9 +165,9 @@
                                         <div class="product_tag">@((item.Bestseller == true) ? "hot" : "new")</div>
                                     </div>
                                     <div class="product_content text-center">
-                                        <div class="product_title"><a href="@Url.Action("Details", "Products", new { id=item.ProductId})">@item.ProductTitle</a></div>
+                                        <div class="product_title"><a href="@Url.Action("Details", "Product", new { id=item.ProductId})">@item.ProductTitle</a></div>
                                         <div class="product_price">@item.ProductPrice zł</div>
-                                        <div class="product_button ml-auto mr-auto trans_200"><a href="@Url.Action("Details", "Products", new { id=item.ProductId})">Zobacz produkt</a></div>
+                                        <div class="product_button ml-auto mr-auto trans_200"><a href="@Url.Action("Details", "Product", new { id=item.ProductId})">Zobacz produkt</a></div>
                                         <div class="product_button ml-auto mr-auto trans_200"><a href="@Url.Action("AddToCart", "Cart", new { id=item.ProductId})">Zobacz produkt</a></div>
                                     </div>
                                 </div>

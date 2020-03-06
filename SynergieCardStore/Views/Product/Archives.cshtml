@@ -1,7 +1,80 @@
-﻿
+﻿@using SynergieCardStore.Infrastructure
+@model IEnumerable<SynergieCardStore.Models.Product>
 @{
-    ViewBag.Title = "Archives";
+    ViewBag.Title = "Archiwum";
 }
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/main_future.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/future.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/future_responsive.css")">
+}
+<!-- Home -->
 
-<h2>Archives</h2>
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
+
+<!-- Categories
+
+<div class="categories">
+  <div class="section_container">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="categories_list_container">
+            <ul class="categories_list d-flex flex-row align-items-center justify-content-start">
+              <li><a href="categories.html">wszystko</a></li>
+              <li><a href="categories.html">polecane</a></li>
+              <li><a href="categories.html">najnowsze</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
+<!-- Products -->
+
+<div class="products">
+
+
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="products_container grid">
+
+                        @foreach (var item in Model)
+                        {
+                            <!-- Product -->
+                            <div class="product grid-item future">
+                                <div class="product_inner">
+                                    <div class="product_image">
+                                        <img src="@Url.ProductsMiniaturesPath(item.ImageFileName+".jpg")" alt="">
+                                        <div class="product_tag">Niedostępne</div>
+                                    </div>
+                                    <div class="product_content text-center">
+                                        <div class="product_title"><a href="@Url.Action("Details", "Product", new { id=item.ProductId})">@item.ProductTitle</a></div>
+                                        <div class="product_price">W tej chwili niedostępne</div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
