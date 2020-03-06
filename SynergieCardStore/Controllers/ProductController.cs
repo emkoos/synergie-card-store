@@ -1,4 +1,5 @@
 ﻿using SynergieCardStore.EF;
+using SynergieCardStore.Infrastructure;
 using SynergieCardStore.Models;
 using System;
 using System.Collections.Generic;
@@ -38,8 +39,18 @@ namespace SynergieCardStore.Controllers
         // GET: Product/Archives
         public ActionResult Archives()
         {
+            ICacheProvider cache = new DefaultCacheProvider();
             IEnumerable<Product> archivedProducts;
-            archivedProducts = from aP in db.Products where aP.Old && !aP.Hidden select aP;
+
+            if (cache.IsSet(Consts.ArchivesCacheKey))
+            {
+                archivedProducts = cache.Get(Consts.ArchivesCacheKey) as IEnumerable<Product>;
+            }
+            else
+            {
+                archivedProducts = from aP in db.Products where aP.Old && !aP.Hidden select aP;
+                cache.Set(Consts.ArchivesCacheKey, archivedProducts, 2);
+            }
 
 
             return View(archivedProducts);
@@ -48,18 +59,36 @@ namespace SynergieCardStore.Controllers
         // GET: Product/Previews
         public ActionResult Previews()
         {
+            ICacheProvider cache = new DefaultCacheProvider();
             IEnumerable<Product> futureProducts;
             
-            futureProducts = from fP in db.Products where fP.Preview && !fP.Hidden select fP;
+            if (cache.IsSet(Consts.PreviewsCacheKey))
+            {
+                futureProducts = cache.Get(Consts.PreviewsCacheKey) as IEnumerable<Product>;
+            }
+            else
+            {
+                futureProducts = from fP in db.Products where fP.Preview && !fP.Hidden select fP;
+                cache.Set(Consts.PreviewsCacheKey, futureProducts, 2);
+            }
 
             return View(futureProducts);
         }
         // GET: Product/News
         public ActionResult News()
         {
+            ICacheProvider cache = new DefaultCacheProvider();
             IEnumerable<Product> newProducts;
 
-            newProducts = db.Products.Where(n => !n.Hidden && !n.Old && !n.Preview).OrderByDescending(n => n.AddedDate).Take(6);
+            if (cache.IsSet(Consts.NewsCacheKey))
+            {
+                newProducts = cache.Get(Consts.NewsCacheKey) as IEnumerable<Product>;
+            }
+            else
+            {
+                newProducts = db.Products.Where(n => !n.Hidden && !n.Old && !n.Preview).OrderByDescending(n => n.AddedDate).Take(6);
+                cache.Set(Consts.NewsCacheKey, newProducts, 2);
+            }
 
             return View(newProducts);
         }
