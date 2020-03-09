@@ -1,4 +1,5 @@
-﻿using SynergieCardStore.Models;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using SynergieCardStore.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +8,7 @@ using System.Web;
 
 namespace SynergieCardStore.EF
 {
-    public class SynergieEntities : DbContext
+    public class SynergieEntities : IdentityDbContext<ApplicationUser>
     {
         // Your context has been configured to use a 'CardsEntities' connection string from your application's 
         // configuration file (App.config or Web.config). By default, this connection string targets the 
@@ -23,6 +24,11 @@ namespace SynergieCardStore.EF
         static SynergieEntities()
         {
             Database.SetInitializer<SynergieEntities>(new DataInitializer());
+        }
+
+        public static SynergieEntities Create()
+        {
+            return new SynergieEntities();
         }
 
         // Add a DbSet for each entity type that you want to include in your model. For more information 
