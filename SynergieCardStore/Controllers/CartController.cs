@@ -1,9 +1,14 @@
-﻿using SynergieCardStore.EF;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using SynergieCardStore.App_Start;
+using SynergieCardStore.EF;
 using SynergieCardStore.Infrastructure;
+using SynergieCardStore.Models;
 using SynergieCardStore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -78,6 +83,70 @@ namespace SynergieCardStore.Controllers
             return cartMenager.TakeCartValue();
         }
 
+        // GET: Cart/Pay
+        public async Task<ActionResult> Pay()
+        {
+            if (Request.IsAuthenticated)
+            {
+                var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
 
+                var order = new Order
+                {
+                    FirstName = user.UserData.FirstName,
+                    LastName = user.UserData.LastName,
+                    Address = user.UserData.Address,
+                    City = user.UserData.City,
+                    PostalCode = user.UserData.PostalCode,
+                    Email = user.UserData.Email,
+                    Phone = user.UserData.Phone
+                };
+                return View(order);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Account", new { returnUrl = Url.Action("Pay", "Cart") });
+            }
+        }
+
+        // POST: Cart/Pay
+        [HttpPost]
+        public async Task<ActionResult> Pay(Order orderDetails)
+        {
+            if (ModelState.IsValid)
+            {
+                var userId = User.Identity.GetUserId();
+
+                var newOrder = cartMenager.CreateOrder(orderDetails, userId);
+
+                var user = await UserManager.FindByIdAsync(userId);
+                TryUpdateModel(user.UserData);
+                await UserManager.UpdateAsync(user);
+
+                cartMenager.EmptyCart();
+
+                return RedirectToAction("OrderConfirmation");
+            }
+            else
+                return View(orderDetails);
+        }
+
+        public ActionResult OrderConfirmation()
+        {
+            var name = User.Identity.Name;
+            return View();
+        }
+
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
     }
 }

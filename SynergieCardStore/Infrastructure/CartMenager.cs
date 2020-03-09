@@ -99,7 +99,7 @@ namespace SynergieCardStore.Infrastructure
         {
             var cart = TakeCart();
             newOrder.AddedDate = DateTime.Now;
-            //newOrder.UserId = userId;
+            newOrder.UserId = userId;
 
             db.Orders.Add(newOrder);
 

@@ -12,7 +12,6 @@ namespace SynergieCardStore.Models
         [Key, Required, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int OrderId { get; set; }
 
-        [Required]
         public string UserId { get; set; }
 
         [Required(ErrorMessage = "Wprowadz imię")]
@@ -54,6 +53,7 @@ namespace SynergieCardStore.Models
 
 
         public List<OrderPosition> OrderPositions { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 
 

@@ -195,6 +195,14 @@
     <Compile Include="Migrations\202003092108489_AddedAspIdentity.designer.cs">
       <DependentUpon>202003092108489_AddedAspIdentity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202003092242542_Orders.cs" />
+    <Compile Include="Migrations\202003092242542_Orders.designer.cs">
+      <DependentUpon>202003092242542_Orders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003092246024_OrdersCorrection.cs" />
+    <Compile Include="Migrations\202003092246024_OrdersCorrection.designer.cs">
+      <DependentUpon>202003092246024_OrdersCorrection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CartPosition.cs" />
     <Compile Include="Models\Category.cs" />
@@ -696,6 +704,8 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Cart\Pay.cshtml" />
+    <Content Include="Views\Cart\OrderConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Mdf_Files\" />
@@ -722,6 +732,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003092108489_AddedAspIdentity.resx">
       <DependentUpon>202003092108489_AddedAspIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003092242542_Orders.resx">
+      <DependentUpon>202003092242542_Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003092246024_OrdersCorrection.resx">
+      <DependentUpon>202003092246024_OrdersCorrection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
