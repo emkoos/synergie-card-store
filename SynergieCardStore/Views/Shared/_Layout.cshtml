@@ -253,13 +253,16 @@
                 </form>
             </div>
 
-            <!-- Cart -->   <!-- Skopiować z wczesniejszego projektu! -->
+            <!-- Cart -->
             <div class="cart d-flex flex-row align-items-center justify-content-start">
-                
-
-
-
-
+                <div class="cart_icon">
+                    <a href="@Url.Action("Index", "Cart")">
+                        <img src="@Url.Content("~/Content/images/bag.png")" alt="">
+                        <div class="cart_num"><span id="cart-header-number">@Html.Action("CartItemsNumber", "Cart")</span></div>
+                    </a>
+                </div>
+                <div class="cart_text">kup</div>
+                <div class="cart_price"><span id="cart-header-value">@Html.Action("CartItemsTotalPrice", "Cart") zł</span></div>
             </div>
 
         </div>

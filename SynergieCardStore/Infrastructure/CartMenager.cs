@@ -73,7 +73,15 @@ namespace SynergieCardStore.Infrastructure
             }
             return 0;
         }
-        
+
+        public int DeleteCart()
+        {
+            var cart = TakeCart();
+            cart.RemoveAll(c => c.Quantity > 0);
+
+            return 0;
+        }
+
         public decimal TakeCartValue()
         {
             var cart = TakeCart();

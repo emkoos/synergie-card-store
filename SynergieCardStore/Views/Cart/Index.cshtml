@@ -1,0 +1,204 @@
+﻿@using SynergieCardStore.Infrastructure
+@model SynergieCardStore.ViewModels.CartViewModel
+@{
+    ViewBag.Title = "Koszyk";
+}
+@section AddToHead{
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/cart.css")">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/styles/cart_responsive.css")">
+}
+
+<!-- Home -->
+
+<div class="home">
+    <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="@Url.Content("~/Content/images/product_background.jpg")" data-speed="0.8"></div>
+    <div class="home_container">
+        <div class="home_content">
+            <div class="home_title">@ViewBag.Title</div>
+            <div class="breadcrumbs">
+                <ul class="d-flex flex-row align-items-center justify-content-start">
+                    <li><a href="@Url.Action("Index", "Home", "Home")">Główna</a></li>
+                    <li><a href="#">@ViewBag.Title</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Cart -->
+
+<div class="cart_section">
+    <div class="section_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="cart_container">
+
+                        <!-- Cart Bar -->
+                        <div class="cart_bar">
+                            <ul class="cart_bar_list item_list d-flex flex-row align-items-center justify-content-start">
+                                <li>Produkt</li>
+                                <li></li>
+                                <li>Cena</li>
+                                <li>Ilość</li>
+                                <li>Łącznie</li>
+                                <li>Usuń</li>
+                            </ul>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div class="cart_items">
+                            <ul class="cart_items_list">
+                                @foreach (var item in Model.CartPositions)
+                                {
+                                    <li id="cart-line-@item.Product.ProductId" class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                        <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                                            <div><div class="product_image"><img src="@Url.ProductsMiniaturesPath(item.Product.ImageFileName+".jpg")" alt=""></div></div>
+                                            <div class="product_name"><a href="@Url.Action("Details", "Products", new { id=item.Product.ProductId})">@item.Product.ProductTitle</a></div>
+                                        </div>
+                                        <div class="product_color text-lg-center product_text"><span> </span></div>
+                                        <div class="product_price text-lg-center product_text"><span>Cena: </span>@String.Format("{0:0.##}", item.Product.ProductPrice) zł</div>
+                                        <div class="product_quantity_container">
+                                            <div class="product_quantity ml-lg-auto mr-lg-auto text-center">
+                                                <span id="cart-positions-number-@item.Product.ProductId" class="product_text product_num">@item.Quantity</span>
+                                                <!--<div class="qty_sub qty_button trans_200 text-center"><span>-</span></div>
+                        <div class="qty_add qty_button trans_200 text-center"><span>+</span></div>-->
+                                            </div>
+                                        </div>
+                                        <div class="product_total text-lg-center product_text" id="product-total-price-@item.Product.ProductId">@(item.Product.ProductPrice * item.Quantity) zł</div>
+                                        <div class="product_size text-lg-center product_text"><a class="delete_product" data-id="@item.Product.ProductId" href="#"><b>Usuń</b></a></div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                        <!-- Cart Buttons -->
+                        <div class="cart_buttons d-flex flex-row align-items-start justify-content-start">
+                            <div class="cart_buttons_inner ml-auto d-flex flex-row align-items-start justify-content-start flex-wrap">
+                                <div class="button button_continue trans_200"><a href="@Url.Action("Index", "Home", "Home")#products">Kontynuuj zakupy</a></div>
+                                <div class="button button_clear trans_200"><a href="@Url.Action("DeleteCart", "Cart")" id="delete_cart">Wyczyść koszyk</a></div>
+                                <div class="button button_update trans_200"><a href="">Aktualizuj koszyk</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section_container cart_extra_container">
+        <div class="container">
+            <div class="row">
+
+                <!-- Shipping & Delivery -->
+                <div class="col-xxl-6">
+                    <div class="cart_extra cart_extra_1">
+                        <div class="cart_extra_content cart_extra_coupon">
+                            <div class="cart_extra_title">Kupon</div>
+                            <div class="coupon_form_container">
+                                <form action="#" id="coupon_form" class="coupon_form">
+                                    <input type="text" class="coupon_input" required="required">
+                                    <button class="coupon_button">Wyślij kod</button>
+                                </form>
+                            </div>
+                            <div class="shipping">
+                                <div class="cart_extra_title">Metoda dostawy</div>
+                                <ul>
+                                    <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                        <label class="radio_container">
+                                            <input type="radio" id="radio_1" name="shipping_radio" class="shipping_radio">
+                                            <span class="radio_mark"></span>
+                                            <span class="radio_text">Kurier InPost</span>
+                                        </label>
+                                        <div class="shipping_price ml-auto">12.99 zł</div>
+                                    </li>
+                                    <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                        <label class="radio_container">
+                                            <input type="radio" id="radio_2" name="shipping_radio" class="shipping_radio">
+                                            <span class="radio_mark"></span>
+                                            <span class="radio_text">Kurier InPost (za pobraniem)</span>
+                                        </label>
+                                        <div class="shipping_price ml-auto">15.00</div>
+                                    </li>
+                                    <li class="shipping_option d-flex flex-row align-items-center justify-content-start">
+                                        <label class="radio_container">
+                                            <input type="radio" id="radio_3" name="shipping_radio" class="shipping_radio" checked>
+                                            <span class="radio_mark"></span>
+                                            <span class="radio_text">Odbiór osobisty</span>
+                                        </label>
+                                        <div class="shipping_price ml-auto">Za darmo</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Total -->
+                <div class="col-xxl-6">
+                    <div class="cart_extra cart_extra_2">
+                        <div class="cart_extra_content cart_extra_total">
+                            <div class="cart_extra_title">Koszty</div>
+                            <ul class="cart_extra_total_list">
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_extra_total_title">Kwota</div>
+                                    <div class="cart_extra_total_value ml-auto"><span id="total-price-value">@Model.TotalPrice</span></div>
+                                </li>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_extra_total_title">Dostawa</div>
+                                    <div class="cart_extra_total_value ml-auto">Za darmo</div>
+                                </li>
+                                <li class="d-flex flex-row align-items-center justify-content-start">
+                                    <div class="cart_extra_total_title">Łączna kwota</div>
+                                    <div id="total-price" class="cart_extra_total_value ml-auto"><span id="total-price-value">@Model.TotalPrice</span></div>
+                                </li>
+                            </ul>
+                            @if (Model.TotalPrice > 0)
+                            {
+                                <div id="cart-button-pay" class="checkout_button trans_200"><a href="@Url.Action("Pay","Cart")">Przejdź do zapłaty</a></div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>✪ torsax
+        </div>
+    </div>
+</div>
+@section Scripts{
+    @System.Web.Optimization.Scripts.Render("~/bundles/jqueryAndJQueryUI")
+    <script type="text/javascript">$(function () {
+                $(".delete_product").click(function () {
+
+                    var recordToDelete = $(this).attr("data-id");
+
+                    if (recordToDelete != '') {
+                        $.post("/Cart/DeleteFromCart", { "prodId": recordToDelete },
+                            function (response) {
+                                if (response.RemovedItemNumber == 0) {
+
+                                    $('#cart-line-' + response.RemovedItemId).fadeOut('slow', function () {
+                                        if (response.CartItemsNumber == 0) {
+                                            $("#cart-empty-message").removeClass("hidden");
+                                        }
+                                    });
+                                } else {
+                                    $('#cart-positions-number-' + response.RemovedItemId).text(response.RemovedItemNumber);
+                                    $('#product-total-price-' + response.RemovedItemId).text(response.CartTotalProductAmount + ' zł');
+                                }
+
+                                if (response.CartItemsNumber == 0) {
+                                    $('#cart-button-pay').addClass('hidden');
+                                    $('#total-price').addClass('invisible');
+                                }
+                                $('#total-price-value').text(response.CartTotalPrice);
+                                $('#cart-header-number').text(response.CartItemsNumber);
+                                $('#cart-header-value').text(response.CartTotalPrice + ' zł');
+
+                            });
+                        return false;
+                    }
+                });
+     });
+    </script>
+}
