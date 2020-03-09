@@ -146,9 +146,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\AppConfig.cs" />
+    <Compile Include="Infrastructure\CartMenager.cs" />
     <Compile Include="Infrastructure\Consts.cs" />
     <Compile Include="Infrastructure\DefaultCacheProvider.cs" />
     <Compile Include="Infrastructure\ICacheProvider.cs" />
+    <Compile Include="Infrastructure\ISessionMenager.cs" />
+    <Compile Include="Infrastructure\SessionMenager.cs" />
     <Compile Include="Infrastructure\UrlHelpers.cs" />
     <Compile Include="Migrations\202003052205296_InitialCreate.cs" />
     <Compile Include="Migrations\202003052205296_InitialCreate.designer.cs">
