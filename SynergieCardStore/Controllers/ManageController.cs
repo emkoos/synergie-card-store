@@ -2,10 +2,12 @@
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SynergieCardStore.App_Start;
+using SynergieCardStore.EF;
 using SynergieCardStore.Models;
 using SynergieCardStore.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -16,6 +18,8 @@ namespace SynergieCardStore.Controllers
     [Authorize]
     public class ManageController : Controller
     {
+        private SynergieEntities db = new SynergieEntities();
+
         public enum ManageMessageId
         {
             ChangePasswordSuccess,
@@ -142,6 +146,42 @@ namespace SynergieCardStore.Controllers
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie, DefaultAuthenticationTypes.TwoFactorCookie);
             AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = isPersistent }, await user.GenerateUserIdentityAsync(UserManager));
+        }
+
+        public ActionResult OrdersList()
+        {
+            bool isAdmin = User.IsInRole("Admin");
+            ViewBag.UserIsAdmin = isAdmin;
+
+            IEnumerable<Order> userOrders;
+
+            if (isAdmin)
+            {
+                userOrders = db.Orders.Include("OrderPositions").OrderByDescending(o => o.AddedDate).ToArray();
+            }
+            else
+            {
+                var userId = User.Identity.GetUserId();
+                userOrders = db.Orders.Where(o => o.UserId == userId).Include("OrderPositions").OrderByDescending(o => o.AddedDate).ToArray();
+            }
+
+            return View(userOrders);
+        }
+
+        [HttpPost]
+        [Authorize(Roles ="Admin")]
+        public OrderStatus OrderStatusChange(Order order)
+        {
+            Order orderForModification = db.Orders.Find(order.OrderId);
+            orderForModification.OrderStatus = order.OrderStatus;
+            db.SaveChanges();
+
+            //if (orderForModification.OrderStatus == OrderStatus.Zrealizowane)
+            //{
+            //    this.mailService.WyslanieZamowienieZrealizowaneEmail(zamowienieDoModyfikacji);
+            //}
+
+            return order.OrderStatus;
         }
     }
 }

@@ -22,3 +22,32 @@ select,
 textarea {
     max-width: 280px;
 }
+#zamowienia-table {
+    width: 100%;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+    #zamowienia-table tr.noweZamowienie:nth-child(3n+1) {
+        background-color: #fff5bd;
+        -moz-transition-duration: 3s;
+        -o-transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+        transition-duration: 3s;
+    }
+
+    #zamowienia-table tr:nth-child(3n+1) {
+        background-color: #f1f1f1;
+        -moz-transition-duration: 3s;
+        -o-transition-duration: 3s;
+        -webkit-transition-duration: 3s;
+        transition-duration: 3s;
+    }
+
+        #zamowienia-table tr:nth-child(3n+1) td {
+            padding: 10px;
+        }
+
+        #zamowienia-table tr:nth-child(3n) td {
+            height: 35px;
+        }
