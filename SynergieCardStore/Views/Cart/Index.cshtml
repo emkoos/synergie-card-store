@@ -54,7 +54,7 @@
                                 {
                                     <li id="cart-line-@item.Product.ProductId" class="cart_item item_list d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
                                         <div class="product d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-                                            <div><div class="product_image"><img src="@Url.ProductsMiniaturesPath(item.Product.ImageFileName+".jpg")" alt=""></div></div>
+                                            <div><div class="product_image"><img src="@Url.ProductsMiniaturesPath(item.Product.ImageFileName)" alt=""></div></div>
                                             <div class="product_name"><a href="@Url.Action("Details", "Products", new { id=item.Product.ProductId})">@item.Product.ProductTitle</a></div>
                                         </div>
                                         <div class="product_color text-lg-center product_text"><span> </span></div>

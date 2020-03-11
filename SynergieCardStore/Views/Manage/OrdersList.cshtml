@@ -64,7 +64,7 @@
                                         <li>
                                             <article>
                                                 <a class="kursSzczegolyLink" href="@Url.Action("Details", "Product", new { id = orderPosition.ProductId })">
-                                                    <img class="kurs" src="@Url.ProductsMiniaturesPath(orderPosition.Product.ImageFileName+".jpg")" />
+                                                    <img class="kurs" src="@Url.ProductsMiniaturesPath(orderPosition.Product.ImageFileName)" />
                                                     <h1>
                                                         @orderPosition.Product.ProductAuthor - @orderPosition.Product.ProductTitle<br />
                                                         <strong>sztuk: @orderPosition.Quantity, łącznie: @(orderPosition.Quantity * @orderPosition.PurchasePrice)  zł</strong>

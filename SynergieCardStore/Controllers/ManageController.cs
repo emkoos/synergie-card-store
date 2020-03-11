@@ -242,12 +242,21 @@ namespace SynergieCardStore.Controllers
                         int i = 1;
                         foreach (var item in file)
                         {
-                            var itemExt = Path.GetExtension(item.FileName);
-                            var jpgitemname = Path.ChangeExtension(itemExt, ".jpg");
-                            var itemname = model.Product.ProductTitle + '_' + i + jpgitemname;
-                            var imagespath = Path.Combine(Server.MapPath(AppConfig.ProductsImagesRelativeFolder), model.Product.ProductTitle, itemname);
-                            item.SaveAs(imagespath);
-                            i++;
+                            if (item  != null)
+                            {
+                                var itemExt = Path.GetExtension(item.FileName);
+                                var jpgitemname = Path.ChangeExtension(itemExt, ".jpg");
+                                var itemname = model.Product.ProductTitle + '_' + i + jpgitemname;
+                                var imagespath = Path.Combine(Server.MapPath(AppConfig.ProductsImagesRelativeFolder), model.Product.ProductTitle, itemname);
+                                item.SaveAs(imagespath);
+                                i++;
+                            }
+                            else
+                            {
+                                i++;
+                                continue;
+                            }
+                            
                         }
 
                         model.Product.ImagesName = model.Product.ProductTitle;
