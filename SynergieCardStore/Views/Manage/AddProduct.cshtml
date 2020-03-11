@@ -1,0 +1,134 @@
+﻿@model SynergieCardStore.ViewModels.EditProductViewModel
+@{
+    ViewBag.Title = "Dodaj produkt";
+    Layout = "~/Views/Shared/_ManageLayout.cshtml";
+}
+
+<hr />
+<h2 class="manageHeader">Edycja produktu</h2>
+<div>
+    @if (Model.Confirmation.HasValue && Model.Confirmation.Value)
+    {
+        <div style="text-align: center; margin: 50px;">
+            Pomyślnie wprowadzono zmiany!
+        </div>
+    }
+
+    @using (@Html.BeginForm("AddProduct", "Manage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="error-summary-centered">
+            @Html.ValidationSummary()
+        </div>
+        @Html.HiddenFor(o => o.Product.ProductId)
+        @Html.HiddenFor(o => o.Product.AddedDate)
+        @Html.HiddenFor(o => o.Product.ImageFileName)
+        @Html.HiddenFor(o => o.Product.ImagesName)
+
+        <div style="text-align: center;">
+            <table id="albumedit-address-table">
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ProductAuthor, "Autor:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.ProductAuthor)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ProductAuthor)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ProductTitle, "Kurs:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.ProductTitle)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ProductTitle)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ProductShortDescription, "Opis skrócony:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.ProductShortDescription)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ProductShortDescription)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ProductDescription, "Opis:")</td>
+                    <td>@Html.TextAreaFor(o => o.Product.ProductDescription, new { style = "width:850px; height: 250px;" })</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ProductDescription)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.VideoYTUrl, "Link do filmiku z YouTube (https://www.youtube.com/embed/):")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.VideoYTUrl)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.VideoYTUrl)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Categories, "Kategoria:")</td>
+                    <td>@Html.DropDownListFor(m => m.Product.CategoryId, new SelectList(Model.Categories, "CategoryId", "CategoryName", Model.Categories.First().CategoryId))</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ProductPrice, "Cena:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.ProductPrice)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ProductPrice)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.ISBN, "ISBN:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.ISBN)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.ISBN)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.PublishingHouse, "Wydawnictwo:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.PublishingHouse)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.PublishingHouse)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.CardDimensions, "Wymiary kart:")</td>
+                    <td>@Html.TextBoxFor(o => o.Product.CardDimensions)</td>
+                    <td>@Html.ValidationMessageFor(o => o.Product.CardDimensions)</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.Bestseller, "Bestseller:")</td>
+                    <td>@Html.CheckBoxFor(o => o.Product.Bestseller)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.Preview, "Zapowiedź:")</td>
+                    <td>@Html.CheckBoxFor(o => o.Product.Preview)</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(o => o.Product.Old, "Archiwum:")</td>
+                    <td>@Html.CheckBoxFor(o => o.Product.Old)</td>
+                    <td></td>
+                </tr>
+
+                @if (ViewBag.EditMode == null || !ViewBag.EditMode)
+                {
+                    <tr><td>Zdjecie 1 (Miniatura)</td><td><input type="file" name="file" required /></td></tr>
+                    <tr><td>Zdjecie 2</td><td><input type="file" name="file"  /></td></tr>
+                    <tr><td>Zdjecie 3</td><td><input type="file" name="file"  /></td></tr>
+                    <tr><td>Zdjecie 4</td><td><input type="file" name="file"  /></td></tr>
+                    <tr><td>Zdjecie 5</td><td><input type="file" name="file"  /></td></tr>
+                }
+                <tr>
+
+                    <td style="text-align: left">
+                        @if (ViewBag.EditMode)
+                        {
+                            if (Model.Product.Hidden)
+                            {
+                                <a href="@Url.Action("ShowProduct", "Manage", new { productId = Model.Product.ProductId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                    Przywróć
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("HideProduct", "Manage", new { productId = Model.Product.ProductId })" style="display: block; margin-top: 15px; font-weight: bold;">
+                                    Usuń (Ukryj)
+                                </a>
+                            }
+                        }
+                    </td>
+
+
+                    <td style="text-align: right;">
+                        <input type="submit" value="Zapisz" class="submitLink" style="height: 40px; margin-right: 0px; margin-top: 30px; font-weight: bold;" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    }
+</div>

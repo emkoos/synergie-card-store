@@ -3,11 +3,13 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SynergieCardStore.App_Start;
 using SynergieCardStore.EF;
+using SynergieCardStore.Infrastructure;
 using SynergieCardStore.Models;
 using SynergieCardStore.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -182,6 +184,116 @@ namespace SynergieCardStore.Controllers
             //}
 
             return order.OrderStatus;
+        }
+
+        [Authorize(Roles ="Admin")]
+        public ActionResult AddProduct(int? productId, bool? confirmation)
+        {
+            Product product;
+
+            if (productId.HasValue)
+            {
+                ViewBag.EditMode = true;
+                product = db.Products.Find(productId);
+            }
+            else
+            {
+                ViewBag.EditMode = false;
+                product = new Product();
+            }
+
+            var result = new EditProductViewModel();
+            result.Categories = db.Categories.ToList();
+            result.Product = product;
+            result.Confirmation = confirmation;
+
+            return View(result);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public ActionResult AddProduct(EditProductViewModel model,IEnumerable<HttpPostedFileBase> file)
+        {
+            if (model.Product.ProductId > 0)
+            {
+                // modyfikacja produktu
+                db.Entry(model.Product).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("AddProduct", new { confirmation = true });
+            }
+            else
+            {
+                // Sprawdzenie, czy użytkownik wybrał plik
+                if (file != null)
+                {
+                    if (ModelState.IsValid)
+                    {
+                        // Generowanie pliku
+                        var fileExt = Path.GetExtension(file.Take(1).First().FileName);
+                        var jpgfilename = Path.ChangeExtension(fileExt, ".jpg");
+
+                        var filename = Guid.NewGuid() + jpgfilename;
+
+                        var miniaturepath = Path.Combine(Server.MapPath(AppConfig.ProductsMiniaturesRelativeFolder), filename);
+                        file.Take(1).First().SaveAs(miniaturepath);
+
+                        model.Product.ImageFileName = filename;
+                        System.IO.Directory.CreateDirectory(Server.MapPath(AppConfig.ProductsImagesRelativeFolder) + model.Product.ProductTitle);
+                        int i = 1;
+                        foreach (var item in file)
+                        {
+                            var itemExt = Path.GetExtension(item.FileName);
+                            var jpgitemname = Path.ChangeExtension(itemExt, ".jpg");
+                            var itemname = model.Product.ProductTitle + '_' + i + jpgitemname;
+                            var imagespath = Path.Combine(Server.MapPath(AppConfig.ProductsImagesRelativeFolder), model.Product.ProductTitle, itemname);
+                            item.SaveAs(imagespath);
+                            i++;
+                        }
+
+                        model.Product.ImagesName = model.Product.ProductTitle;
+                        model.Product.AddedDate = DateTime.Now;
+
+                        db.Entry(model.Product).State = EntityState.Added;
+                        db.SaveChanges();
+
+                        return RedirectToAction("AddProduct", new { confirmation = true });
+                    }
+                    else
+                    {
+                        var categories = db.Categories.ToList();
+                        model.Categories = categories;
+                        return View(model);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Nie wskazano pliku");
+                    var categories = db.Categories.ToList();
+                    model.Categories = categories;
+                    return View(model);
+                }
+            }
+            
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult HideProduct(int productId)
+        {
+            var product = db.Products.Find(productId);
+            product.Hidden = true;
+            db.SaveChanges();
+
+            return RedirectToAction("AddProduct", new { confirmation = true });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult ShowProduct(int productId)
+        {
+            var product = db.Products.Find(productId);
+            product.Hidden = false;
+            db.SaveChanges();
+
+            return RedirectToAction("AddProduct", new { confirmation = true });
         }
     }
 }

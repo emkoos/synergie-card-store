@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -146,6 +146,10 @@ section
 	display: block;
 	position: relative;
 	box-sizing: border-box;
+}
+.DescriptionField {
+	height: 60px;
+	min-width: 400px;
 }
 .clear
 {

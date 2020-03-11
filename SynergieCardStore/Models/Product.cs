@@ -19,6 +19,7 @@ namespace SynergieCardStore.Models
         public string ProductAuthor { get; set; }
         public string ProductDescription { get; set; }
         public string ProductShortDescription { get; set; }
+        public string VideoYTUrl { get; set; }
         public DateTime AddedDate { get; set; }
         public decimal ProductPrice { get; set; }
         public string ISBN { get; set; }

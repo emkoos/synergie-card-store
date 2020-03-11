@@ -67,6 +67,12 @@
                                 <div class="product_description_body">
                                     @Model.ProductDescription
                                 </div>
+                                @if (Model.VideoYTUrl != null)
+                                {
+                                    <div style="text-align:center;">
+                                        <iframe width="560" height="315" src="@Model.VideoYTUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                }
                             </div>
                             <div class="product_content_inner">
                                 <div class="product_image_row d-flex flex-md-row flex-column align-items-md-end align-items-start justify-content-start">
@@ -83,7 +89,7 @@
                                     <div class="product_image_5 product_image"><img src="@Url.ProductsImagesPath(Model.ImagesName, Model.ImagesName+"_5.jpg")" alt=""></div>
                                 </div>
                             </div>
-
+                            
 
                         </div>
                         <div class="product_sidebar order-lg-2 order-1">
@@ -98,6 +104,10 @@
                             <div style="margin-left: auto;margin-right: auto;text-align: center;">
                                 <div class="fb-like" style="margin-top: 30px;;" data-href="https://www.facebook.com/synergiewydawnictwo/" data-width="30" data-layout="box_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                             </div>
+                            @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                            {
+                                <a href="@Url.Action("AddProduct", "Manage", new { productId = Model.ProductId })" style="margin-top: 20px; font-weight: bold; display: block;">Edytuj</a>
+                            }
                         </div>
                     </div>
                 </div>

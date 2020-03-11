@@ -16,18 +16,10 @@ namespace SynergieCardStore.Controllers
 
         public ActionResult Index()
         {
-            ICacheProvider cache = new DefaultCacheProvider();
             IEnumerable<Product> products;
 
-            if (cache.IsSet(Consts.mainProductsCacheKey))
-            {
-                products = cache.Get(Consts.mainProductsCacheKey) as IEnumerable<Product>;
-            }
-            else
-            {
-                products = db.Products.Where(p => !p.Old && !p.Preview && !p.Hidden).ToList();
-                cache.Set(Consts.mainProductsCacheKey, products, 2);
-            }
+            products = db.Products.Where(p => !p.Old && !p.Preview && !p.Hidden).ToList();
+
             
             var vm = new HomeViewModel()
             {
