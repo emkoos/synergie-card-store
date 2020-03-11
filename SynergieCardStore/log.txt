@@ -1,0 +1,8 @@
+2020-03-11 17:35:36.9085|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:35:46.5091|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:35:50.5677|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:35:52.8370|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:42:21.0674|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:42:28.2697|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:42:29.5532|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-11 17:42:32.8788|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
