@@ -1,0 +1,38 @@
+﻿@model SynergieCardStore.ViewModels.OrderConfirmationEmail
+Content-Type: text/html; charset=utf-8
+<html>
+<body>
+    @Html.EmbedImage("~/Content/images/synergie_logo.jpg")
+
+    <p>Dziękujemy!</p>
+    <p>Złożyłeś zamówienie w serwisie Synergie Polska.</p>
+    <p>Zamówione pozycje:</p>
+
+    @{
+        IEnumerable<SynergieCardStore.Models.OrderPosition> orderPositions = Model.OrderPositions;
+        for (int i = 0; i < orderPositions.Count(); i++)
+        {
+        <p>
+            @orderPositions.ElementAt(i).Product.ProductTitle - @orderPositions.ElementAt(i).Product.ProductAuthor 
+            - @orderPositions.ElementAt(i).Product.ProductPrice
+        </p>            
+        }
+    }
+    <p>Prosimy o przelanie kwoty @Model.Value zł., tytułem zamówienia nr @Model.OrderNumber na nasze konto:</p>
+    <p>Synergie Polska Sp. z o.o.</p>
+    <p>ul. Rynek 10</p>
+    <p>27-570</p>
+    <p>Iwaniska</p>
+    <p>PKO BP 02302 54054 4504543  40535</p>
+    <p>Zaraz po otrzymaniu środków uzyskasz pełny dostęp do kursu.</p>
+    <p>Dziękujemy i zapraszamy ponownie!</p>
+
+</body>
+</html>
+
+
+
+
+
+
+

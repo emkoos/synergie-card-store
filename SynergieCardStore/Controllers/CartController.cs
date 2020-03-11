@@ -124,6 +124,15 @@ namespace SynergieCardStore.Controllers
 
                 cartMenager.EmptyCart();
 
+                var order = db.Orders.Include("OrderPositions").Include("OrderPositions.Product").SingleOrDefault(o => o.OrderId == newOrder.OrderId);
+                OrderConfirmationEmail email = new OrderConfirmationEmail();
+                email.To = order.Email;
+                email.From = "synergiepolska@gmail.com";
+                email.Value = order.OrderValue;
+                email.OrderNumber = order.OrderId;
+                email.OrderPositions = order.OrderPositions;
+                email.Send();
+
                 return RedirectToAction("OrderConfirmation");
             }
             else
