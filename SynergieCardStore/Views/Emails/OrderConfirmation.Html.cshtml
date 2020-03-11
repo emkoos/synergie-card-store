@@ -1,4 +1,4 @@
-﻿@model SynergieCardStore.ViewModels.OrderConfirmationEmail
+﻿@model SynergieCardStore.ViewModels.EmailModels.OrderConfirmationEmail
 Content-Type: text/html; charset=utf-8
 <html>
 <body>
@@ -12,10 +12,10 @@ Content-Type: text/html; charset=utf-8
         IEnumerable<SynergieCardStore.Models.OrderPosition> orderPositions = Model.OrderPositions;
         for (int i = 0; i < orderPositions.Count(); i++)
         {
-        <p>
-            @orderPositions.ElementAt(i).Product.ProductTitle - @orderPositions.ElementAt(i).Product.ProductAuthor 
-            - @orderPositions.ElementAt(i).Product.ProductPrice
-        </p>            
+            <p>
+                @orderPositions.ElementAt(i).Product.ProductTitle - @orderPositions.ElementAt(i).Product.ProductAuthor
+                - @orderPositions.ElementAt(i).Product.ProductPrice
+            </p>
         }
     }
     <p>Prosimy o przelanie kwoty @Model.Value zł., tytułem zamówienia nr @Model.OrderNumber na nasze konto:</p>

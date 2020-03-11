@@ -11,9 +11,11 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using static SynergieCardStore.ViewModels.EmailModels;
 
 namespace SynergieCardStore.Controllers
 {
@@ -21,11 +23,17 @@ namespace SynergieCardStore.Controllers
     public class ManageController : Controller
     {
         private SynergieEntities db = new SynergieEntities();
+        private IMailService mailService;
 
         public enum ManageMessageId
         {
             ChangePasswordSuccess,
             Error
+        }
+
+        public ManageController(IMailService mailService)
+        {
+            this.mailService = mailService;
         }
 
         private ApplicationSignInManager _signInManager;
@@ -178,10 +186,10 @@ namespace SynergieCardStore.Controllers
             orderForModification.OrderStatus = order.OrderStatus;
             db.SaveChanges();
 
-            //if (orderForModification.OrderStatus == OrderStatus.Zrealizowane)
-            //{
-            //    this.mailService.WyslanieZamowienieZrealizowaneEmail(zamowienieDoModyfikacji);
-            //}
+            if (orderForModification.OrderStatus == OrderStatus.Zrealizowane)
+            {
+                this.mailService.SendOrderCompletedEmail(orderForModification);
+            }
 
             return order.OrderStatus;
         }
@@ -303,6 +311,42 @@ namespace SynergieCardStore.Controllers
             db.SaveChanges();
 
             return RedirectToAction("AddProduct", new { confirmation = true });
+        }
+
+        [AllowAnonymous]
+        public ActionResult SendOrderConfirmationEmail(int orderId, string lastname)
+        {
+            var order = db.Orders.Include("OrderPositions").Include("OrderPositions.Product")
+                                  .SingleOrDefault(o => o.OrderId == orderId && o.LastName == lastname);
+
+            if (order == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+            OrderConfirmationEmail email = new OrderConfirmationEmail();
+            email.To = order.Email;
+            email.From = "emil.saracyn@gmail.com";
+            email.Value = order.OrderValue;
+            email.OrderNumber = order.OrderId;
+            email.OrderPositions = order.OrderPositions;
+            email.Send();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+        [AllowAnonymous]
+        public ActionResult SendOrderCompletedEmail(int orderId, string lastname)
+        {
+            var order = db.Orders.Include("OrderPositions").Include("OrderPositions.Product")
+                                  .SingleOrDefault(o => o.OrderId == orderId && o.LastName == lastname);
+
+            if (order == null) return new HttpStatusCodeResult(HttpStatusCode.NotFound);
+
+            OrderCompletedEmail email = new OrderCompletedEmail();
+            email.To = order.Email;
+            email.From = "emil.saracyn@gmail.com";
+            email.OrderNumber = order.OrderId;
+            email.Send();
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }

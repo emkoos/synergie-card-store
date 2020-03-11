@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using static SynergieCardStore.ViewModels.EmailModels;
 
 namespace SynergieCardStore.Controllers
 {
@@ -19,10 +20,11 @@ namespace SynergieCardStore.Controllers
         private CartMenager cartMenager;
         private ISessionMenager sessionMenager { get; set; }
         private SynergieEntities db;
-
+        private IMailService mailService;
         
-        public CartController()
+        public CartController(IMailService mailService)
         {
+            this.mailService = mailService;
             db = new SynergieEntities();
             sessionMenager = new SessionMenager();
             cartMenager = new CartMenager(sessionMenager, db);
@@ -124,14 +126,7 @@ namespace SynergieCardStore.Controllers
 
                 cartMenager.EmptyCart();
 
-                var order = db.Orders.Include("OrderPositions").Include("OrderPositions.Product").SingleOrDefault(o => o.OrderId == newOrder.OrderId);
-                OrderConfirmationEmail email = new OrderConfirmationEmail();
-                email.To = order.Email;
-                email.From = "synergiepolska@gmail.com";
-                email.Value = order.OrderValue;
-                email.OrderNumber = order.OrderId;
-                email.OrderPositions = order.OrderPositions;
-                email.Send();
+                mailService.SendOrderConfirmationEmail(newOrder);
 
                 return RedirectToAction("OrderConfirmation");
             }

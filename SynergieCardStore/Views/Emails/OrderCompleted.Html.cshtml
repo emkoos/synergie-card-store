@@ -1,0 +1,15 @@
+﻿@model SynergieCardStore.ViewModels.EmailModels.OrderCompletedEmail
+Content-Type: text/html; charset=utf-8
+
+<html>
+<body>
+    @Html.EmbedImage("~/Content/images/synergie_logo.jpg")
+    <p>Dziękujemy!</p>
+    <p>Twoje zamówienie nr @Model.OrderNumber</p>
+    <p>złożone w serwisie praktyczne kursy zostało zrealizowane.</p>
+    <p>Zapraszamy ponownie - odwiedź nas wkrótce</p>
+</body>
+</html>
+
+
+
