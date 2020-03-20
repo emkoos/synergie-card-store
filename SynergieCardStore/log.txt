@@ -1818,3 +1818,238 @@
 2020-03-12 00:27:34.9623|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
 2020-03-12 00:27:39.9736|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
 2020-03-12 00:27:39.9785|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:28:36.4434|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:28:38.8205|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:28:38.8331|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:28:38.8411|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration.
+2020-03-20 18:28:38.8411|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+2020-03-20 18:28:38.8820|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:28:38.8870|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:28:38.8870|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:28:38.9139|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:39fa49a9 has started in 5,3201 ms
+2020-03-20 18:28:38.9269|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:13864:04666bef is announcing itself...
+2020-03-20 18:28:38.9389|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried no more than in 00:00:15
+2020-03-20 18:28:38.9389|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:39fa49a9 caught an exception and will be retried in 00:00:15
+2020-03-20 18:28:38.9518|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:39fa49a9 will be retried in 00:00:15...
+2020-03-20 18:28:39.3658|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:31:08.5844|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:31:08.6661|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:31:08.6781|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:31:08.6841|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration.
+2020-03-20 18:31:08.6841|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+2020-03-20 18:31:08.7220|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:31:08.7220|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:31:08.7330|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:31:08.7549|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:83e2fd2f has started in 5,0407 ms
+2020-03-20 18:31:08.7689|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15996:2d3d896e is announcing itself...
+2020-03-20 18:31:08.7808|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried no more than in 00:00:15
+2020-03-20 18:31:08.7808|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:83e2fd2f caught an exception and will be retried in 00:00:15
+2020-03-20 18:31:08.7808|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:83e2fd2f will be retried in 00:00:15...
+2020-03-20 18:31:09.0761|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:31:31.7136|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:31:31.7844|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:31:31.7973|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:31:31.7973|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration.
+2020-03-20 18:31:31.7973|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+2020-03-20 18:31:31.8373|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:31:31.8442|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:31:31.8442|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:31:31.8721|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:b3cd5a31 has started in 5,2247 ms
+2020-03-20 18:31:31.8721|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:16024:37bb808b is announcing itself...
+2020-03-20 18:31:31.8971|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried no more than in 00:00:15
+2020-03-20 18:31:31.9051|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:b3cd5a31 caught an exception and will be retried in 00:00:15
+2020-03-20 18:31:31.9051|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:b3cd5a31 will be retried in 00:00:15...
+2020-03-20 18:31:32.1841|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:32:02.4620|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:32:12.5303|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:32:12.5303|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration. Retrying...
+2020-03-20 18:32:12.5482|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|An exception occurred while trying to perform the migration.
+2020-03-20 18:32:12.5482|WARN|Hangfire.SqlServer.SqlServerObjectsInstaller|Was unable to perform the Hangfire schema migration due to an exception. Ignore this message unless you've just installed or upgraded Hangfire.
+2020-03-20 18:32:12.5881|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:32:12.5941|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:32:12.5941|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:32:12.6210|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 has started in 5,2326 ms
+2020-03-20 18:32:12.6210|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:052ce34d is announcing itself...
+2020-03-20 18:32:12.6490|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is in the Failed state now due to an exception, execution will be retried no more than in 00:00:15
+2020-03-20 18:32:12.6570|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:32:12.6570|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:32:12.9332|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:34:18.8745|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:4325625c is announcing itself...
+2020-03-20 18:34:26.8157|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is still in the Failed state for 00:02:14.1602744 due to an exception, will be retried no more than in 00:00:15
+2020-03-20 18:34:26.8157|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:34:26.8286|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:34:41.8376|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:0695dc20 is announcing itself...
+2020-03-20 18:34:41.8465|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is still in the Failed state for 00:02:29.1915484 due to an exception, will be retried no more than in 00:00:15
+2020-03-20 18:34:41.8625|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:34:41.8625|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:34:56.8715|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:dc0f3d9e is announcing itself...
+2020-03-20 18:34:56.8715|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is still in the Failed state for 00:02:44.2224285 due to an exception, will be retried no more than in 00:00:15
+2020-03-20 18:34:56.8715|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:34:56.8925|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:35:11.8972|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:2d44014a is announcing itself...
+2020-03-20 18:35:11.9041|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is still in the Failed state for 00:02:59.2495167 due to an exception, will be retried no more than in 00:00:15
+2020-03-20 18:35:11.9041|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:35:11.9211|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:35:26.9264|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:15824:6c392aa7 is announcing itself...
+2020-03-20 18:35:26.9264|ERROR|Hangfire.Processing.BackgroundExecution|Execution BackgroundServerProcess is still in the Failed state for 00:03:14.2773758 due to an exception, will be retried no more than in 00:00:15
+2020-03-20 18:35:26.9422|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 caught an exception and will be retried in 00:00:15
+2020-03-20 18:35:26.9422|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:64c27143 will be retried in 00:00:15...
+2020-03-20 18:35:58.0655|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:35:58.2689|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2020-03-20 18:35:58.3009|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:35:58.3088|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:35:58.3088|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:35:58.3388|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:98ed9a33 has started in 5,9615 ms
+2020-03-20 18:35:58.3517|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:11404:95070c3a is announcing itself...
+2020-03-20 18:35:58.3946|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:11404:95070c3a successfully announced in 37,7816 ms
+2020-03-20 18:35:58.4055|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerHeartbeatProcess:eb87b8ff has started in 3,0164 ms
+2020-03-20 18:35:58.4055|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:11404:95070c3a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2020-03-20 18:35:58.4055|TRACE|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:11404:95070c3a waiting for 00:00:30 delay before sending a heartbeat
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerWatchdog:b1912f1c has started in 2,3762 ms
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ExpirationManager:bc70a6d6 has started in 2,5724 ms
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:7a6ad71e has started in 2,9137 ms
+2020-03-20 18:35:58.4345|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:8b330e41 has started in 8,4149 ms
+2020-03-20 18:35:58.4345|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:93f07e76 has started in 5,9443 ms
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop CountersAggregator:5f00dd67 has started in 7,01 ms
+2020-03-20 18:35:58.4534|DEBUG|Hangfire.SqlServer.CountersAggregator|Aggregating records in 'Counter' table...
+2020-03-20 18:35:58.4345|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:416fe5bb has started in 12,4036 ms
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerJobCancellationWatcher:cb269933 has started in 3,4613 ms
+2020-03-20 18:35:58.4534|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:9f4e2448 has started in 35,1725 ms
+2020-03-20 18:35:58.4764|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:72092def has started in 48,3286 ms
+2020-03-20 18:35:58.4195|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'AggregatedCounter' table...
+2020-03-20 18:35:58.4534|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:ab1c90a0 has started in 26,1356 ms
+2020-03-20 18:35:58.5103|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:53bbf33a has started in 81,6869 ms
+2020-03-20 18:35:58.5282|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:abdeceb4 has started in 99,7475 ms
+2020-03-20 18:35:58.4764|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:35:58.5512|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:0f17b68e has started in 122,4854 ms
+2020-03-20 18:35:58.5512|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:5e803b95 has started in 128,8619 ms
+2020-03-20 18:35:58.5601|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:4f1c0441 has started in 132,037 ms
+2020-03-20 18:35:58.5601|TRACE|Hangfire.SqlServer.CountersAggregator|Records from the 'Counter' table aggregated.
+2020-03-20 18:35:58.5601|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:3790ffd4 has started in 142,3636 ms
+2020-03-20 18:35:58.5601|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:8ce93518 has started in 137,0005 ms
+2020-03-20 18:35:58.5512|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:109c7b0a has started in 126,5993 ms
+2020-03-20 18:35:58.5601|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:3d41b86a has started in 145,2596 ms
+2020-03-20 18:35:58.5512|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:35:58.5781|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:9938fcbb has started in 149,8398 ms
+2020-03-20 18:35:58.5781|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:b113517a has started in 156,17 ms
+2020-03-20 18:35:58.5781|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:80d7a403 has started in 159,1811 ms
+2020-03-20 18:35:58.5601|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'AggregatedCounter' table.
+2020-03-20 18:35:58.5940|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:11404:95070c3a all the dispatchers started
+2020-03-20 18:35:58.5781|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:d5f768f6 has started in 152,3436 ms
+2020-03-20 18:35:58.5940|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop DelayedJobScheduler:6c574a3a has started in 6,0734 ms
+2020-03-20 18:35:58.6220|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Job' table...
+2020-03-20 18:35:58.5940|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop RecurringJobScheduler:3084108a has started in 4,2331 ms
+2020-03-20 18:35:58.6469|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Job' table.
+2020-03-20 18:35:58.6529|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'List' table...
+2020-03-20 18:35:58.6529|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'List' table.
+2020-03-20 18:35:58.6529|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Set' table...
+2020-03-20 18:35:58.6529|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Set' table.
+2020-03-20 18:35:58.6718|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Hash' table...
+2020-03-20 18:35:58.6718|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Hash' table.
+2020-03-20 18:35:58.8145|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:36:25.4328|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2020-03-20 18:36:25.6043|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2020-03-20 18:36:25.6432|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (LocalDb)\v11.0@SynergieStore'
+2020-03-20 18:36:25.6432|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:15.
+2020-03-20 18:36:25.6592|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2020-03-20 18:36:25.6941|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop BackgroundServerProcess:0af628c7 has started in 9,0057 ms
+2020-03-20 18:36:25.7210|TRACE|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:3348:8595e296 is announcing itself...
+2020-03-20 18:36:25.8078|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:3348:8595e296 successfully announced in 70,5551 ms
+2020-03-20 18:36:25.8277|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerHeartbeatProcess:8ad98964 has started in 7,9086 ms
+2020-03-20 18:36:25.8277|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:3348:8595e296 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2020-03-20 18:36:25.8277|TRACE|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:3348:8595e296 waiting for 00:00:30 delay before sending a heartbeat
+2020-03-20 18:36:25.8487|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerWatchdog:01495eaf has started in 6,2495 ms
+2020-03-20 18:36:25.8587|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ServerJobCancellationWatcher:5bbacf0f has started in 9,4022 ms
+2020-03-20 18:36:25.8587|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:25.8587|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop ExpirationManager:5a8f8f64 has started in 8,6871 ms
+2020-03-20 18:36:25.8746|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:25.8746|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop CountersAggregator:8ee815f4 has started in 13,7575 ms
+2020-03-20 18:36:25.9344|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:d295d959 has started in 50,7217 ms
+2020-03-20 18:36:25.9095|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:01bb2595 has started in 25,7995 ms
+2020-03-20 18:36:25.9344|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:8fe35174 has started in 51,0516 ms
+2020-03-20 18:36:25.9095|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:54d403ad has started in 25,8083 ms
+2020-03-20 18:36:25.8746|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'AggregatedCounter' table...
+2020-03-20 18:36:25.9344|DEBUG|Hangfire.SqlServer.CountersAggregator|Aggregating records in 'Counter' table...
+2020-03-20 18:36:26.0312|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:ecf45b7c has started in 147,809 ms
+2020-03-20 18:36:25.9833|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:54ef27cc has started in 99,5775 ms
+2020-03-20 18:36:26.0551|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:9966727e has started in 172,0979 ms
+2020-03-20 18:36:26.0621|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:4701115b has started in 178,9525 ms
+2020-03-20 18:36:26.0621|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:7f3860d8 has started in 188,2006 ms
+2020-03-20 18:36:26.0771|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:98748768 has started in 193,6903 ms
+2020-03-20 18:36:26.0900|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:1f485073 has started in 208,9152 ms
+2020-03-20 18:36:26.0900|TRACE|Hangfire.SqlServer.CountersAggregator|Records from the 'Counter' table aggregated.
+2020-03-20 18:36:26.0900|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:c7513b06 has started in 218,5554 ms
+2020-03-20 18:36:26.0771|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:0f299bdc has started in 203,7627 ms
+2020-03-20 18:36:26.1369|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:af2f19c9 has started in 253,3928 ms
+2020-03-20 18:36:26.1369|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:341b37c1 has started in 256,4854 ms
+2020-03-20 18:36:26.1239|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:32344864 has started in 241,0638 ms
+2020-03-20 18:36:26.1698|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:b6f10c3b has started in 291,4821 ms
+2020-03-20 18:36:26.1698|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:30b92c5b has started in 296,7487 ms
+2020-03-20 18:36:26.1997|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-t66g6in:3348:8595e296 all the dispatchers started
+2020-03-20 18:36:26.1698|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:8505c210 has started in 286,6917 ms
+2020-03-20 18:36:26.1698|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'AggregatedCounter' table.
+2020-03-20 18:36:26.1668|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop Worker:edc9a0e5 has started in 283,1831 ms
+2020-03-20 18:36:26.1918|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop DelayedJobScheduler:948f47cc has started in 9,3899 ms
+2020-03-20 18:36:26.1997|DEBUG|Hangfire.Processing.BackgroundExecution|Execution loop RecurringJobScheduler:8df12ea1 has started in 7,3197 ms
+2020-03-20 18:36:26.2227|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Job' table...
+2020-03-20 18:36:26.2536|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Job' table.
+2020-03-20 18:36:26.2536|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'List' table...
+2020-03-20 18:36:26.2686|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'List' table.
+2020-03-20 18:36:26.2686|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Set' table...
+2020-03-20 18:36:26.2815|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Set' table.
+2020-03-20 18:36:26.2815|DEBUG|Hangfire.SqlServer.ExpirationManager|Removing outdated records from the 'Hash' table...
+2020-03-20 18:36:26.3025|TRACE|Hangfire.SqlServer.ExpirationManager|Outdated records removed from the 'Hash' table.
+2020-03-20 18:36:26.4122|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:36:30.9093|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:30.9093|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:35.9476|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:35.9515|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:40.9575|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:40.9575|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:45.9689|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:45.9689|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:50.7387|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:36:50.9910|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:50.9910|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:36:55.8549|DEBUG|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:3348:8595e296 heartbeat successfully sent
+2020-03-20 18:36:55.8590|TRACE|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:3348:8595e296 waiting for 00:00:30 delay before sending a heartbeat
+2020-03-20 18:36:56.0041|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:36:56.0041|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:37:01.0188|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:37:01.0188|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:37:06.0279|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:37:06.0279|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:37:17.9606|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:37:17.9686|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:37:17.9686|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:37:22.9816|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:37:22.9816|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
+2020-03-20 18:37:24.4992|INFO|SynergieCardStore.Controllers.HomeController|To jest strona g³ówna
+2020-03-20 18:37:25.8930|DEBUG|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:3348:8595e296 heartbeat successfully sent
+2020-03-20 18:37:25.8930|TRACE|Hangfire.Server.ServerHeartbeatProcess|Server desktop-t66g6in:3348:8595e296 waiting for 00:00:30 delay before sending a heartbeat
+2020-03-20 18:37:27.9915|TRACE|Hangfire.Server.ServerJobCancellationWatcher|Checking for aborted jobs...
+2020-03-20 18:37:27.9915|TRACE|Hangfire.Server.ServerJobCancellationWatcher|No newly aborted jobs found.
