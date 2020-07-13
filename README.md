@@ -2,11 +2,11 @@
 > Internetowy sklep z kartami i książkami stworzony w technologii ASP.NET MVC dla firmy Synergie Polska Sp. z o.o.
 
 ## Table of contents
-* [Ogólne informacje](#general-info)
-* [Użyte technologie](#technologies)
-* [Do zrobienia](#features)
+* [Ogólne informacje](#ogólne-informacje)
+* [Użyte technologie](#użyte-technologie)
+* [Do zrobienia](#do-zrobienia)
 * [Status](##status)
-* [Kontakt](#contact)
+* [Kontakt](#kontakt)
 
 ## Ogólne informacje
 Celem niniejszego projektu była zarówno nauka nowych technologii jak i również zbudowanie produktu do użytku codziennego dla firmy Synergie Polska.
