@@ -33,7 +33,7 @@ Lista elementów pozostałych do ukończenia i stworzenia:
 * Testy aplikacji
 
 ## Status
-Projekt nie będzie w najbliższym czasie kontynuowany. Ukończenie możliwe niebawem.
+Projekt nie będzie w najbliższym czasie kontynuowany.
 
 ## Kontakt
 Created by [@emkoos](https://github.com/emkoos/) - Skontaktuj się ze mną!
